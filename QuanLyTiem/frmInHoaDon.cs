@@ -21,6 +21,7 @@ namespace QuanLyTiem
         private float finalPrice;
         private AccountDTO staff; // Khai báo biến lưu nhân viên
 
+
         public frmInHoaDon(int idBill, TableDTO table, int discount, AccountDTO acc)
         {
             InitializeComponent();
