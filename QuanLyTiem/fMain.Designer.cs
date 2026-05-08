@@ -49,7 +49,6 @@
             this.quảnLýLoạiHàngHóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kiểmKêBánHàngTrongNgàyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoBánHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.báoCáoTồnKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoNhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -185,7 +184,6 @@
             this.kiểmKêBánHàngTrongNgàyToolStripMenuItem,
             this.báoCáoNhậpHàngToolStripMenuItem,
             this.báoCáoBánHàngToolStripMenuItem,
-            this.báoCáoTồnKhoToolStripMenuItem,
             this.doanhThuToolStripMenuItem1});
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
             this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
@@ -223,12 +221,6 @@
             this.báoCáoBánHàngToolStripMenuItem.Name = "báoCáoBánHàngToolStripMenuItem";
             this.báoCáoBánHàngToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.báoCáoBánHàngToolStripMenuItem.Text = "Báo cáo bán hàng";
-            // 
-            // báoCáoTồnKhoToolStripMenuItem
-            // 
-            this.báoCáoTồnKhoToolStripMenuItem.Name = "báoCáoTồnKhoToolStripMenuItem";
-            this.báoCáoTồnKhoToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
-            this.báoCáoTồnKhoToolStripMenuItem.Text = "Báo cáo tồn kho";
             // 
             // báoCáoNhậpHàngToolStripMenuItem
             // 
@@ -278,6 +270,5 @@
         private System.Windows.Forms.ToolStripMenuItem kiểmKêBánHàngTrongNgàyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoNhậpHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoBánHàngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem báoCáoTồnKhoToolStripMenuItem;
     }
 }
