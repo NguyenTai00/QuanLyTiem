@@ -172,6 +172,12 @@
     <Compile Include="frmTiem.Designer.cs">
       <DependentUpon>frmTiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kien1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kien1.Designer.cs">
+      <DependentUpon>Kien1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fLogin.resx">
