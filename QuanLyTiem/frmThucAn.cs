@@ -19,7 +19,7 @@ namespace QuanLyTiem
         
         BindingSource foodList = new BindingSource();
 
-        // 1. Khai báo sự kiện "Dữ liệu thức ăn đã thay đổi"
+       
         private event EventHandler insertFood;
         public event EventHandler InsertFood
         {
@@ -34,7 +34,7 @@ namespace QuanLyTiem
             remove { updateFood -= value; }
         }
 
-        // Thêm dòng này để khai báo sự kiện Xóa
+       
         private event EventHandler deleteFood;
         public event EventHandler DeleteFood
         {
@@ -45,7 +45,7 @@ namespace QuanLyTiem
         public frmThucAn()
         {
             InitializeComponent();
-            dtgvFood.DataSource = foodList; // Gắn bảng vào binding source
+            dtgvFood.DataSource = foodList; 
             LoadListFood();
             LoadCategoryIntoCombobox(cboFoodCategory);
             AddFoodBinding();
@@ -62,7 +62,6 @@ namespace QuanLyTiem
             cb.DisplayMember = "Name";
         }
 
-        // Kỹ thuật DataBinding: Click bảng -> hiện thông tin lên các ô nhập
         void AddFoodBinding()
         {
             txtFoodID.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID", true, DataSourceUpdateMode.Never));
@@ -131,22 +130,21 @@ namespace QuanLyTiem
                 return;
             }
 
-            // 2. Khởi tạo ứng dụng Excel
+            
             Excel.Application excelApp = new Excel.Application();
             excelApp.Application.Workbooks.Add(Type.Missing);
 
-            // 3. Tạo tiêu đề các cột trong Excel từ DataGridView
-            // Lưu ý: dtgvFood.Columns.Count là số cột bạn đang hiện trên bảng
+            
             for (int i = 1; i < dtgvFood.Columns.Count + 1; i++)
             {
                 excelApp.Cells[1, i] = dtgvFood.Columns[i - 1].HeaderText;
 
-                // Làm đẹp tiêu đề: In đậm và tô màu nền vàng cho tiêu đề
+              
                 excelApp.Cells[1, i].Font.Bold = true;
                 excelApp.Cells[1, i].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow);
             }
 
-            // 4. Đổ dữ liệu từ từng dòng của bảng vào Excel
+            
             for (int i = 0; i < dtgvFood.Rows.Count; i++)
             {
                 for (int j = 0; j < dtgvFood.Columns.Count; j++)
@@ -158,7 +156,6 @@ namespace QuanLyTiem
                 }
             }
 
-            // 5. Căn chỉnh cột tự động cho vừa chữ và hiện file Excel lên
             excelApp.Columns.AutoFit();
             excelApp.Visible = true;
 

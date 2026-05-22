@@ -108,12 +108,12 @@ namespace QuanLyTiem
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            // Xóa trắng các ô để người dùng nhập mới từ đầu
+            
             txtUserName.Text = "";
             txtDisplayName.Text = "";
             nmAccountType.Value = 0;
 
-            // Cho phép nhập vào ô UserName khi muốn thêm mới
+           
             txtUserName.ReadOnly = false;
         }
 

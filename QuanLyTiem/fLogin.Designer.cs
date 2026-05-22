@@ -36,48 +36,48 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Controls.Add(this.txtUserName);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(484, 243);
+            this.panel1.Size = new System.Drawing.Size(874, 494);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(270, 169);
+            this.button2.BackColor = System.Drawing.Color.LightSalmon;
+            this.button2.Location = new System.Drawing.Point(276, 295);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 40);
             this.button2.TabIndex = 6;
             this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(51, 169);
+            this.button1.BackColor = System.Drawing.Color.Khaki;
+            this.button1.Location = new System.Drawing.Point(67, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 40);
             this.button1.TabIndex = 5;
             this.button1.Text = "Đăng nhập";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(218, 124);
+            this.txtPassword.Location = new System.Drawing.Point(201, 209);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(254, 30);
             this.txtPassword.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(218, 76);
+            this.txtUserName.Location = new System.Drawing.Point(201, 147);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(254, 30);
             this.txtUserName.TabIndex = 3;
@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 129);
+            this.label3.Location = new System.Drawing.Point(37, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 2;
@@ -103,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 76);
+            this.label2.Location = new System.Drawing.Point(37, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 25);
             this.label2.TabIndex = 1;
@@ -112,17 +112,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(169, 22);
+            this.label1.Location = new System.Drawing.Point(178, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng nhập";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtPassword);
+            this.panel2.Controls.Add(this.txtUserName);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(385, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(489, 494);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::QuanLyTiem.Properties.Resources.logins;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(388, 494);
+            this.panel3.TabIndex = 8;
+            // 
             // fLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(484, 243);
+            this.ClientSize = new System.Drawing.Size(874, 494);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -133,7 +157,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -148,6 +173,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

@@ -22,7 +22,7 @@ namespace QuanLyTiem
 
         private void OpenChildForm(Form child, ChildFormMode mode)
         {
-            pnlMain.Controls.Clear(); // Xóa form cũ
+            pnlMain.Controls.Clear(); 
             child.TopLevel = false;
             child.FormBorderStyle = FormBorderStyle.None;
 
@@ -67,21 +67,16 @@ namespace QuanLyTiem
 
         void f_InsertFood(object sender, EventArgs e)
         {
-            // Tại đây bạn có thể yêu cầu các form khác load lại dữ liệu
-            // Ví dụ: Nếu bạn đang lưu biến frmTiem trong fMain, bạn gọi:
-            // currentFrmTiem.LoadCategory();
-
-            // Với cách code hiện tại của bạn, việc "new" lại form mỗi lần mở đã là 1 cách refresh rồi.
-            // Nhưng Delegate sẽ giúp bạn xử lý các logic ngầm phức tạp hơn.
+           
         }
 
         void f_UpdateFood(object sender, EventArgs e)
         {
-            // Tương tự như InsertFood, bạn có thể yêu cầu các form khác load lại dữ liệu
+           
         }
         void f_DeleteFood(object sender, EventArgs e)
         {
-            // Tương tự như InsertFood, bạn có thể yêu cầu các form khác load lại dữ liệu
+            
         }
 
         private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,20 +89,18 @@ namespace QuanLyTiem
         {
             InitializeComponent();
 
-            // Lưu cái tài khoản được truyền từ fLogin vào biến của fMain
             this.loginAccount = acc;
 
-            // Sau khi nhận xong, ta gọi hàm để phân quyền (ẩn/hiện menu)
+            
             ChangeAccount(loginAccount.Type);
         }
 
         void ChangeAccount(int type)
         {
-            // Giả sử cái Menu Admin của bạn tên là adminToolStripMenuItem
-            // Nếu type == 1 (Admin) thì Enabled = true, ngược lại là false
+            
             hệThốngToolStripMenuItem.Enabled = (type == 1);
 
-            // Tiện thể hiện tên người dùng lên thanh tiêu đề cho chuyên nghiệp
+           
             this.Text = "Phần mềm quản lý tiệm - Chào " + loginAccount.DisplayName;
         }
 
@@ -118,10 +111,9 @@ namespace QuanLyTiem
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Truyền loginAccount (cái mà ta đã nhận từ fLogin) sang cho frmThongTinTaiKhoan
+           
             frmThongTinTaiKhoan f = new frmThongTinTaiKhoan(loginAccount);
 
-            // Mở dạng Fill hoặc Center tùy bạn chọn
             OpenChildForm(f, ChildFormMode.Center);
         }
 
@@ -133,27 +125,27 @@ namespace QuanLyTiem
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close(); // Đóng form chính, trở về form đăng nhập
+            this.Close();
         }
 
         private void quảnLýBànĂnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmBanAn f = new frmBanAn();
-            OpenChildForm(f, ChildFormMode.Center);
+            OpenChildForm(f, ChildFormMode.Fill);
         }
 
         private void doanhThuToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmDoanhThu f = new frmDoanhThu();
-            // Gọi hàm mở form con vào Panel chính của bạn
+            
             OpenChildForm(f, ChildFormMode.Fill);
         }
 
         private void bánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Truyền biến loginAccount (biến mà fMain đã nhận từ fLogin) vào đây
+            
             frmTiem f = new frmTiem(loginAccount);
-            OpenChildForm(f, ChildFormMode.Center);
+            OpenChildForm(f, ChildFormMode.Fill);
         }
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)

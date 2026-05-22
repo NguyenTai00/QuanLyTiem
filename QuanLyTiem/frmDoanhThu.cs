@@ -32,7 +32,7 @@ namespace QuanLyTiem
             dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
         }
 
-        // Hàm gọi dữ liệu và đổ vào bảng
+       
         void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
         {
             dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
@@ -45,24 +45,23 @@ namespace QuanLyTiem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // 1. Kiểm tra xem bảng có dữ liệu không
+            
             if (dtgvBill.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu để xuất!");
                 return;
             }
 
-            // 2. Khởi tạo các đối tượng Excel
+           
             Excel.Application excelApp = new Excel.Application();
             excelApp.Application.Workbooks.Add(Type.Missing);
 
-            // 3. Đổ tiêu đề cột từ DataGridView sang Excel
+            
             for (int i = 1; i < dtgvBill.Columns.Count + 1; i++)
             {
                 excelApp.Cells[1, i] = dtgvBill.Columns[i - 1].HeaderText;
             }
 
-            // 4. Đổ dữ liệu từ các dòng sang Excel
             for (int i = 0; i < dtgvBill.Rows.Count; i++)
             {
                 for (int j = 0; j < dtgvBill.Columns.Count; j++)
@@ -74,7 +73,6 @@ namespace QuanLyTiem
                 }
             }
 
-            // 5. Căn chỉnh và hiển thị file Excel
             excelApp.Columns.AutoFit();
             excelApp.Visible = true;
 

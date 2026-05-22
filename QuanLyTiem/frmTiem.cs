@@ -18,13 +18,10 @@ namespace QuanLyTiem
     {
         private AccountDTO loginAccount;
         TableDTO selectedTable = null;
-
         public frmTiem(AccountDTO acc)
         {
             InitializeComponent();
-            this.loginAccount = acc; // Lưu lại
-            // Biến dùng để ghi nhớ bàn khách đang chọn
-            
+            this.loginAccount = acc;
 
             LoadTable();
             LoadCategory();
@@ -40,24 +37,24 @@ namespace QuanLyTiem
                 Button btn = new Button() { Width = 100, Height = 100 };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
                 btn.Tag = item;
-                btn.Click += btn_Click;
-                btn.BackColor = item.Status == "Trống" ? Color.LightGreen : Color.LightPink;
+                btn.Click += TableButton_Click; 
+                btn.BackColor = item.Status == "Trống" ? Color.LightGreen : Color.LightPink; 
 
                 flpTable.Controls.Add(btn);
 
-                // NẾU BÀN NÀY TRÙNG VỚI BÀN ĐANG CHỌN TRƯỚC ĐÓ -> TỰ CLICK LẠI
-                if (selectedTable != null && item.ID == selectedTable.ID)
+
+                if (selectedTable != null && item.ID == selectedTable.ID) 
                 {
-                    // Cập nhật lại dữ liệu mới cho biến ghi nhớ (vì status có thể đã đổi)
+                    
                     selectedTable = item;
-                    btn_Click(btn, new EventArgs());
+                    TableButton_Click(btn, new EventArgs()); 
                 }
             }
 
-            // Nếu lần đầu mở form (chưa có selectedTable) thì mới chọn bàn đầu tiên
+           
             if (selectedTable == null && flpTable.Controls.Count > 0)
             {
-                btn_Click(flpTable.Controls[0] as Button, new EventArgs());
+                TableButton_Click(flpTable.Controls[0] as Button, new EventArgs());
             }
         }
         void LoadCategory()
@@ -72,6 +69,11 @@ namespace QuanLyTiem
             cboFood.DisplayMember = "Name";
         }
 
+        string FormatMoney(double money)
+        {
+            return money.ToString("N0") + "đ";
+        }
+
         void ShowBill(int idTable)
         {
             lsvBill.Items.Clear();
@@ -81,39 +83,49 @@ namespace QuanLyTiem
             {
                 ListViewItem lsvItem = new ListViewItem(item.FoodName);
                 lsvItem.SubItems.Add(item.Count.ToString());
-                lsvItem.SubItems.Add(item.Price.ToString());
-                lsvItem.SubItems.Add(item.TotalPrice.ToString("N0"));
+                lsvItem.SubItems.Add(FormatMoney(item.Price));
+                lsvItem.SubItems.Add(FormatMoney(item.TotalPrice));
                 totalPrice += item.TotalPrice;
                 lsvBill.Items.Add(lsvItem);
             }
-            txtTotalPrice.Text = totalPrice.ToString("N0");
+            txtTotalPrice.Text = FormatMoney(totalPrice);
         }
 
-        // Khi click chọn bàn
-        void btn_Click(object sender, EventArgs e)
+
+        void TableButton_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            // Ghi nhớ bàn vừa click vào biến toàn cục
-            selectedTable = btn.Tag as TableDTO;
+            Button currentButton = sender as Button;
 
-            // Reset màu hoặc viền của tất cả các nút về bình thường trước khi chọn nút mới
-            foreach (Button item in flpTable.Controls)
+            if (currentButton == null) return;
+
+            TableDTO currentTable = currentButton.Tag as TableDTO;
+
+            if (currentTable == null) return;
+
+            selectedTable = currentTable;
+
+            ResetTableButtonStyle();
+
+            currentButton.FlatStyle = FlatStyle.Flat;
+            currentButton.FlatAppearance.BorderColor = Color.DarkViolet;
+            currentButton.FlatAppearance.BorderSize = 2;
+
+            lsvBill.Tag = currentTable;
+
+            ShowBill(currentTable.ID);
+        }
+        void ResetTableButtonStyle()
+        {
+            foreach (Control control in flpTable.Controls)
             {
-                item.FlatAppearance.BorderSize = 0;
-                item.FlatStyle = FlatStyle.Standard;
+                Button btn = control as Button;
+
+                if (btn != null)
+                {
+                    btn.FlatStyle = FlatStyle.Standard;
+                    btn.FlatAppearance.BorderSize = 0;
+                }
             }
-            Button clickedButton = sender as Button;
-            TableDTO table = clickedButton.Tag as TableDTO;
-
-            // Làm nổi bật nút đang chọn
-            clickedButton.FlatStyle = FlatStyle.Flat;
-            clickedButton.FlatAppearance.BorderColor = Color.Purple;
-            clickedButton.FlatAppearance.BorderSize = 2;
-
-            int tableID = ((sender as Button).Tag as TableDTO).ID;
-            lsvBill.Tag = (sender as Button).Tag;
-            ShowBill(selectedTable.ID);
-            ShowBill(tableID);
         }
 
         private void cboCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,7 +138,7 @@ namespace QuanLyTiem
         {
             
             TableDTO table = lsvBill.Tag as TableDTO;
-            //
+            
             if (table == null) { MessageBox.Show("Hãy chọn bàn!"); return; }
 
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
@@ -150,7 +162,7 @@ namespace QuanLyTiem
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            // Lấy thông tin bàn đang chọn từ Tag của ListView
+           
             TableDTO table = lsvBill.Tag as TableDTO;
 
             if (table == null)
@@ -158,23 +170,26 @@ namespace QuanLyTiem
                 MessageBox.Show("Hãy chọn bàn cần thanh toán!");
                 return;
             }
-            //List<MenuDTO> listMenu = MenuDAO.Instance.GetListMenuByTable(table.ID);
+            
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
-            int discount = (int)nmDiscount.Value; // nmDiscount là tên NumericUpDown giảm giá
+            int discount = (int)nmDiscount.Value;
 
-            // Lấy tổng tiền từ textbox, loại bỏ chữ "VNĐ" và dấu phân cách để chuyển về số
-            // Nếu bạn để txbTotalPrice chỉ chứa số thì dùng:
-            double totalPrice = double.Parse(txtTotalPrice.Text, System.Globalization.NumberStyles.Number);
+
+            string totalText = txtTotalPrice.Text
+                    .Replace("đ", "")
+                    .Replace(".", "");
+
+            double totalPrice = double.Parse(totalText);
             double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
 
             if (idBill != -1)
             {
-                // Hiện Form Hóa Đơn để nhân viên check
+               
                 frmInHoaDon f = new frmInHoaDon(idBill, table, discount, loginAccount);
 
                 if (f.ShowDialog() == DialogResult.OK)
                 {
-                    // Nếu đã bấm In/Xác nhận thành công thì load lại bàn
+                   
                     LoadTable();
                     ShowBill(table.ID);
                 }
@@ -185,19 +200,13 @@ namespace QuanLyTiem
         {
             if (lsvBill.SelectedItems.Count > 0)
             {
-                // 2. Lấy thông tin món và bàn đang chọn
+               
                 ListViewItem item = lsvBill.SelectedItems[0];
                 MenuDTO foodInfo = item.Tag as MenuDTO;
                 TableDTO table = lsvBill.Tag as TableDTO;
 
                 int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
 
-                // 3. Tìm mã món (Food ID) dựa trên tên món hoặc bạn có thể bổ sung ID vào MenuDTO
-                // Ở đây tôi dùng một mẹo nhỏ: Truyền số lượng âm thật lớn để Procedure tự xóa
-                // Bạn cần viết thêm 1 hàm lấy FoodID từ Name hoặc chỉnh MenuDTO có thêm ID.
-
-                /* Giả sử bạn đã có FoodID */
-                 //BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, -999); 
 
                  ShowBill(table.ID);
                  LoadTable();

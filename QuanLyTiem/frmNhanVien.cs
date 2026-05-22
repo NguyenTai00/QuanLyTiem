@@ -13,58 +13,56 @@ namespace QuanLyTiem
 {
     public partial class frmNhanVien : Form
     {
-        
-        int cheDo = 0;
+
+        private int trangThaiHienTai = 0;
 
         public frmNhanVien()
         {
             InitializeComponent();
-            TaiDuLieu();        
-            TrangThaiBanDau();
+            LoadBangDuLieu();
+            DieuChinhGiaoDien(0); 
         }
 
-        void TrangThaiBanDau()
+
+        private void DieuChinhGiaoDien(int mode)
         {
-            txtHoTen.Enabled = txtDienThoai.Enabled = txtDiaChi.Enabled = false; // Khóa các ô
-            btnGhi.Enabled = btnHuyGhi.Enabled = false;
-            btnThemMoi.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
+            trangThaiHienTai = mode;
+
+           
+            bool dangChinhSua = (mode != 0);
+
+           
+            txtHoTen.Enabled = dangChinhSua;
+            dtpNgaySinh.Enabled = dangChinhSua;
+            rdoNam.Enabled = rdoNu.Enabled = dangChinhSua;
+            txtDienThoai.Enabled = dangChinhSua;
+            txtEmail.Enabled = dangChinhSua;
+            txtDiaChi.Enabled = dangChinhSua;
+            dtpNgayVaoLam.Enabled = dangChinhSua;
+            txtMoTa.Enabled = dangChinhSua;
+
+           
+            btnThemMoi.Enabled = !dangChinhSua;
+            btnSua.Enabled = !dangChinhSua;
+            btnXoa.Enabled = !dangChinhSua;
+            btnKetThuc.Enabled = !dangChinhSua;
+
+            btnGhi.Enabled = dangChinhSua;
+            btnHuyGhi.Enabled = dangChinhSua;
         }
 
-        void TrangThaiNhapLieu()
-        {
-            txtHoTen.Enabled = txtDienThoai.Enabled = txtDiaChi.Enabled = true; // Mở các ô
-            btnGhi.Enabled = btnHuyGhi.Enabled = true;
-            btnThemMoi.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
-        }
-
-        void TaiDuLieu()
+        private void LoadBangDuLieu()
         {
             dgvNhanVien.DataSource = NhanVienDAO.Instance.LayDanhSachNhanVien();
-            // Chỉnh độ rộng cột cho đẹp
             if (dgvNhanVien.Columns.Count > 0)
             {
+                dgvNhanVien.Columns["ID"].Visible = false; // Ẩn ID cho đẹp
                 dgvNhanVien.Columns["HoTen"].HeaderText = "Họ và tên";
-                dgvNhanVien.Columns["DienThoai"].HeaderText = "Điện thoại";
-               dgvNhanVien.Columns["DiaChi"].HeaderText = "Địa chỉ";
-                dgvNhanVien.Columns["MoTa"].HeaderText = "Mô tả";
+                dgvNhanVien.Columns["DienThoai"].HeaderText = "Số điện thoại";
             }
         }
 
-        // 1. Hàm bật/tắt các TextBox và RadioButton nhập liệu
-        void ChoPhepNhapLieu(bool b)
-        {
-            txtHoTen.Enabled = b;
-            dtpNgaySinh.Enabled = b;
-            rdoNam.Enabled = rdoNu.Enabled = b;
-            txtDienThoai.Enabled = b;
-            txtEmail.Enabled = b;
-            txtDiaChi.Enabled = b;
-            dtpNgayVaoLam.Enabled = b;
-            txtMoTa.Enabled = b;
-        }
-
-        // 2. Hàm xóa trắng các ô nhập liệu
-        void XoaTrang()
+        private void XoaTrangForm()
         {
             txtHoTen.Clear();
             txtDienThoai.Clear();
@@ -75,83 +73,70 @@ namespace QuanLyTiem
             rdoNam.Checked = true;
         }
 
-        // 3. Hàm điều khiển trạng thái các nút bấm
-        void ThietLapNut(bool b)
-        {
-            btnThemMoi.Enabled = b;
-            btnSua.Enabled = b;
-            btnXoa.Enabled = b;
-            btnKetThuc.Enabled = b;
-
-            btnGhi.Enabled = !b; // Nút Ghi ngược lại với nút Thêm
-            btnHuyGhi.Enabled = !b;
-        }
-
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvNhanVien.CurrentRow != null && cheDo == 0) // Chỉ hiện khi đang ở chế độ xem
+            
+            if (dgvNhanVien.CurrentRow != null && trangThaiHienTai == 0)
             {
-                DataGridViewRow row = dgvNhanVien.CurrentRow;
-                txtHoTen.Text = row.Cells["HoTen"].Value.ToString();
-                txtDienThoai.Text = row.Cells["DienThoai"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
-                txtMoTa.Text = row.Cells["MoTa"].Value.ToString();
+                DataGridViewRow dongHienTai = dgvNhanVien.CurrentRow;
 
-                // Xử lý ngày tháng
-                dtpNgaySinh.Value = Convert.ToDateTime(row.Cells["NgaySinh"].Value);
+                txtHoTen.Text = dongHienTai.Cells["HoTen"].Value.ToString();
+                txtDienThoai.Text = dongHienTai.Cells["DienThoai"].Value.ToString();
+                txtEmail.Text = dongHienTai.Cells["Email"].Value.ToString();
+                txtDiaChi.Text = dongHienTai.Cells["DiaChi"].Value.ToString();
+                txtMoTa.Text = dongHienTai.Cells["MoTa"].Value.ToString();
 
-                // Xử lý giới tính
-                if (row.Cells["GioiTinh"].Value.ToString() == "Nam") rdoNam.Checked = true;
+               
+                var giaTriNgay = dongHienTai.Cells["NgaySinh"].Value;
+                dtpNgaySinh.Value = (giaTriNgay == DBNull.Value) ? DateTime.Now : Convert.ToDateTime(giaTriNgay);
+
+                if (dongHienTai.Cells["GioiTinh"].Value.ToString() == "Nam") rdoNam.Checked = true;
                 else rdoNu.Checked = true;
             }
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
         {
-            string ten = txtHoTen.Text;
-            string gt = rdoNam.Checked ? "Nam" : "Nữ";
+            string hoTen = txtHoTen.Text.Trim();
+            string gioiTinh = rdoNam.Checked ? "Nam" : "Nữ";
 
-            if (cheDo == 1) // Lệnh Thêm
+            if (string.IsNullOrEmpty(hoTen))
             {
-                NhanVienDAO.Instance.ThemNhanVien(ten, dtpNgaySinh.Value, gt, txtDienThoai.Text, txtEmail.Text, txtDiaChi.Text, dtpNgayVaoLam.Value, txtMoTa.Text);
-            }
-            else if (cheDo == 2) // Lệnh Sửa
-            {
-                int id = int.Parse(dgvNhanVien.CurrentRow.Cells["ID"].Value.ToString());
-                NhanVienDAO.Instance.SuaNhanVien(id, ten, dtpNgaySinh.Value, gt, txtDienThoai.Text, txtEmail.Text, txtDiaChi.Text, dtpNgayVaoLam.Value, txtMoTa.Text);
+                MessageBox.Show("Vui lòng không để trống họ tên!");
+                return;
             }
 
-            TaiDuLieu();
-            ChoPhepNhapLieu(false);
-            ThietLapNut(true);
-            cheDo = 0;
+            if (trangThaiHienTai == 1) 
+            {
+                NhanVienDAO.Instance.ThemNhanVien(hoTen, dtpNgaySinh.Value, gioiTinh, txtDienThoai.Text, txtEmail.Text, txtDiaChi.Text, dtpNgayVaoLam.Value, txtMoTa.Text);
+            }
+            else if (trangThaiHienTai == 2) 
+            {
+                int maSo = int.Parse(dgvNhanVien.CurrentRow.Cells["ID"].Value.ToString());
+                NhanVienDAO.Instance.SuaNhanVien(maSo, hoTen, dtpNgaySinh.Value, gioiTinh, txtDienThoai.Text, txtEmail.Text, txtDiaChi.Text, dtpNgayVaoLam.Value, txtMoTa.Text);
+            }
+
+            LoadBangDuLieu();
+            DieuChinhGiaoDien(0);
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            cheDo = 1; // Thiết lập đang ở chế độ Thêm
-            XoaTrang(); // Xóa trắng các ô
-            ChoPhepNhapLieu(true); // Mở khóa các ô cho nhập
-            ThietLapNut(false); // Mờ nút Thêm/Sửa/Xóa, hiện nút Ghi/Hủy
+            XoaTrangForm();
+            DieuChinhGiaoDien(1); 
             txtHoTen.Focus();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (dgvNhanVien.CurrentRow == null) return;
-            cheDo = 2; // Chế độ Sửa
-            ChoPhepNhapLieu(true);
-            ThietLapNut(false);
+            DieuChinhGiaoDien(2); 
         }
 
         private void btnHuyGhi_Click(object sender, EventArgs e)
         {
-            cheDo = 0;
-            ChoPhepNhapLieu(false);
-            ThietLapNut(true);
-            // Load lại dữ liệu dòng hiện tại để xóa các ký tự đang nhập dở
-            dgvNhanVien_CellClick(null, null);
+            DieuChinhGiaoDien(0); 
+            dgvNhanVien_CellClick(null, null); 
         }
 
         private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -161,46 +146,24 @@ namespace QuanLyTiem
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string tuKhoa = txtTimKiem.Text;
-            string loai = rdoTimTheoTen.Checked ? "Ten" : "SDT";
-
-            // Gọi hàm tìm kiếm đã viết ở Bước 1
-            dgvNhanVien.DataSource = NhanVienDAO.Instance.TimKiemNhanVien(tuKhoa, loai);
+            string kieuTim = rdoTimTheoTen.Checked ? "Ten" : "SDT";
+            dgvNhanVien.DataSource = NhanVienDAO.Instance.TimKiemNhanVien(txtTimKiem.Text, kieuTim);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            // 1. Kiểm tra xem người dùng đã chọn dòng nào trên bảng chưa
-            if (dgvNhanVien.CurrentRow == null)
-            {
-                MessageBox.Show("Vui lòng chọn nhân viên muốn xóa trên bảng!", "Thông báo");
-                return;
-            }
 
-            // 2. Lấy ID và Tên của nhân viên để hiển thị thông báo xác nhận
-            int id = int.Parse(dgvNhanVien.CurrentRow.Cells["ID"].Value.ToString());
+            if (dgvNhanVien.CurrentRow == null) return;
+
+            int maSo = int.Parse(dgvNhanVien.CurrentRow.Cells["ID"].Value.ToString());
             string ten = dgvNhanVien.CurrentRow.Cells["HoTen"].Value.ToString();
 
-            // 3. Hiển thị hộp thoại xác nhận (đúng quy chuẩn đồ án)
-            DialogResult result = MessageBox.Show(
-                "Bạn có chắc chắn muốn xóa nhân viên [" + ten + "] không?",
-                "Xác nhận xóa",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            // 4. Nếu người dùng chọn YES
-            if (result == DialogResult.Yes)
+            if (MessageBox.Show($"Bạn có thực sự muốn xóa nhân viên {ten}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (NhanVienDAO.Instance.XoaNhanVien(id))
+                if (NhanVienDAO.Instance.XoaNhanVien(maSo))
                 {
-                    MessageBox.Show("Đã xóa nhân viên thành công!", "Thông báo");
-                    TaiDuLieu(); // Tải lại bảng để cập nhật danh sách mới
-                    XoaTrang();  // Xóa trắng các ô nhập liệu sau khi xóa thành công
-                }
-                else
-                {
-                    MessageBox.Show("Có lỗi xảy ra, không thể xóa nhân viên này!", "Lỗi");
+                    LoadBangDuLieu();
+                    XoaTrangForm();
                 }
             }
         }

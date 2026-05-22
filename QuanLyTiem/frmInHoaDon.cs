@@ -37,14 +37,13 @@ namespace QuanLyTiem
         {
             lblTable.Text = "Bàn: " + table.Name;
             lblDate.Text = "Ngày: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-            lblStaff.Text = "Nhân viên: " + staff.DisplayName; // Giả sử tên label là lblStaff
+            lblStaff.Text = "Nhân viên: " + staff.DisplayName; 
 
-            // Lấy danh sách món ăn đã gọi
             List<MenuDTO> listMenu = MenuDAO.Instance.GetListMenuByTable(table.ID);
             dgvBillDetails.DataSource = listMenu;
             dgvBillDetails.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Tính tiền
+          
             float totalPrice = 0;
             foreach (MenuDTO item in listMenu) { totalPrice += item.TotalPrice; }
             finalPrice = totalPrice - (totalPrice / 100) * discount;
@@ -53,19 +52,18 @@ namespace QuanLyTiem
             lblDiscount.Text = discount.ToString() + "%";
             lblFinalPrice.Text = finalPrice.ToString("N0") + "đ";
 
-            // Đổi tên tiêu đề cột cho đẹp
             dgvBillDetails.Columns["FoodName"].HeaderText = "Tên món";
             dgvBillDetails.Columns["Count"].HeaderText = "Số lượng";
             dgvBillDetails.Columns["Price"].HeaderText = "Đơn giá";
             dgvBillDetails.Columns["TotalPrice"].HeaderText = "Thành tiền";
 
-            // Định dạng cột Thành tiền không hiện số E+07
+            
             dgvBillDetails.Columns["TotalPrice"].DefaultCellStyle.Format = "N0";
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            // 1. Cập nhật dữ liệu vào CSDL trước khi in
+           
             BillDAO.Instance.CheckOut(idBill, discount, finalPrice);
             TableDAO.Instance.UpdateTableStatus(table.ID, "Trống");
 
@@ -78,13 +76,13 @@ namespace QuanLyTiem
                 printDocument1.Print();
             }
 
-            this.DialogResult = DialogResult.OK; // Báo cho Form Tiệm là đã xong
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Chụp ảnh cái Panel 'pnlBill' và vẽ nó vào trang giấy
+            
             Bitmap bmp = new Bitmap(pnlBill.Width, pnlBill.Height);
             pnlBill.DrawToBitmap(bmp, new Rectangle(0, 0, pnlBill.Width, pnlBill.Height));
             e.Graphics.DrawImage(bmp, 0, 0);

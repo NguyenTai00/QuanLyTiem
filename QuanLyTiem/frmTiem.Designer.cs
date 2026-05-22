@@ -185,7 +185,7 @@
             this.btnCheckOut.Location = new System.Drawing.Point(338, 11);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(166, 66);
-            this.btnCheckOut.TabIndex = 4;
+            this.btnCheckOut.TabIndex = 6;
             this.btnCheckOut.Text = "Thanh toán";
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
@@ -195,14 +195,14 @@
             this.nmDiscount.Location = new System.Drawing.Point(183, 11);
             this.nmDiscount.Name = "nmDiscount";
             this.nmDiscount.Size = new System.Drawing.Size(120, 30);
-            this.nmDiscount.TabIndex = 3;
+            this.nmDiscount.TabIndex = 4;
             // 
             // txtTotalPrice
             // 
             this.txtTotalPrice.Location = new System.Drawing.Point(183, 47);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(120, 30);
-            this.txtTotalPrice.TabIndex = 2;
+            this.txtTotalPrice.TabIndex = 5;
             // 
             // label3
             // 
@@ -268,11 +268,6 @@
             this.nmFoodCount.Name = "nmFoodCount";
             this.nmFoodCount.Size = new System.Drawing.Size(120, 30);
             this.nmFoodCount.TabIndex = 2;
-            this.nmFoodCount.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
             // 
             // btnAddFood
             // 

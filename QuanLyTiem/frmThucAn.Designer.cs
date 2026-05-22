@@ -149,7 +149,7 @@
             this.btnAddFood.Location = new System.Drawing.Point(3, 3);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(75, 38);
-            this.btnAddFood.TabIndex = 0;
+            this.btnAddFood.TabIndex = 8;
             this.btnAddFood.Text = "Thêm";
             this.btnAddFood.UseVisualStyleBackColor = true;
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
@@ -159,7 +159,7 @@
             this.btnShowFood.Location = new System.Drawing.Point(233, 3);
             this.btnShowFood.Name = "btnShowFood";
             this.btnShowFood.Size = new System.Drawing.Size(87, 38);
-            this.btnShowFood.TabIndex = 1;
+            this.btnShowFood.TabIndex = 9;
             this.btnShowFood.Text = "Report";
             this.btnShowFood.UseVisualStyleBackColor = true;
             this.btnShowFood.Click += new System.EventHandler(this.btnShowFood_Click);
@@ -247,7 +247,7 @@
             this.btnDeleteFood.Location = new System.Drawing.Point(192, 233);
             this.btnDeleteFood.Name = "btnDeleteFood";
             this.btnDeleteFood.Size = new System.Drawing.Size(75, 41);
-            this.btnDeleteFood.TabIndex = 10;
+            this.btnDeleteFood.TabIndex = 7;
             this.btnDeleteFood.Text = "Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
             this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
@@ -257,7 +257,7 @@
             this.btnEditFood.Location = new System.Drawing.Point(58, 233);
             this.btnEditFood.Name = "btnEditFood";
             this.btnEditFood.Size = new System.Drawing.Size(75, 41);
-            this.btnEditFood.TabIndex = 9;
+            this.btnEditFood.TabIndex = 6;
             this.btnEditFood.Text = "Sửa ";
             this.btnEditFood.UseVisualStyleBackColor = true;
             this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
@@ -267,7 +267,7 @@
             this.nmFoodPrice.Location = new System.Drawing.Point(146, 149);
             this.nmFoodPrice.Name = "nmFoodPrice";
             this.nmFoodPrice.Size = new System.Drawing.Size(198, 30);
-            this.nmFoodPrice.TabIndex = 8;
+            this.nmFoodPrice.TabIndex = 5;
             // 
             // cboFoodCategory
             // 
@@ -275,14 +275,14 @@
             this.cboFoodCategory.Location = new System.Drawing.Point(146, 102);
             this.cboFoodCategory.Name = "cboFoodCategory";
             this.cboFoodCategory.Size = new System.Drawing.Size(198, 33);
-            this.cboFoodCategory.TabIndex = 7;
+            this.cboFoodCategory.TabIndex = 4;
             // 
             // txtFoodName
             // 
             this.txtFoodName.Location = new System.Drawing.Point(146, 60);
             this.txtFoodName.Name = "txtFoodName";
             this.txtFoodName.Size = new System.Drawing.Size(198, 30);
-            this.txtFoodName.TabIndex = 6;
+            this.txtFoodName.TabIndex = 2;
             // 
             // txtFoodID
             // 

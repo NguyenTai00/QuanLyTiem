@@ -26,10 +26,10 @@ namespace QuanLyTiem
 
             if (AccountDAO.Instance.Login(userName, passWord))
             {
-                // Lấy thông tin tài khoản vừa đăng nhập thành công
+                
                 AccountDTO loginAccount = AccountDAO.Instance.GetAccountByUserName(userName);
 
-                fMain f = new fMain(loginAccount); // Truyền tài khoản sang fMain
+                fMain f = new fMain(loginAccount); 
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
@@ -39,11 +39,7 @@ namespace QuanLyTiem
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông báo");
             }
         }
-
-        bool Login(string userName, string passWord)
-        {
-            return AccountDAO.Instance.Login(userName, passWord);
-        }
+          
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -54,7 +50,7 @@ namespace QuanLyTiem
         {
             if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
-                e.Cancel = true; // Hủy việc đóng form
+                e.Cancel = true; 
             }
         }
 

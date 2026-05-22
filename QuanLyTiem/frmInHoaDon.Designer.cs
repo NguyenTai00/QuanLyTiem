@@ -32,6 +32,8 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
+            this.lblThoiGian = new System.Windows.Forms.Label();
+            this.lblMaHD = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,10 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.lblMaHD = new System.Windows.Forms.Label();
-            this.lblThoiGian = new System.Windows.Forms.Label();
-            this.lblKhachDua = new System.Windows.Forms.Label();
-            this.lblTienThua = new System.Windows.Forms.Label();
             this.tlpRoot.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlBill.SuspendLayout();
@@ -93,8 +91,6 @@
             // 
             // pnlBill
             // 
-            this.pnlBill.Controls.Add(this.lblTienThua);
-            this.pnlBill.Controls.Add(this.lblKhachDua);
             this.pnlBill.Controls.Add(this.lblThoiGian);
             this.pnlBill.Controls.Add(this.lblMaHD);
             this.pnlBill.Controls.Add(this.label7);
@@ -117,6 +113,24 @@
             this.pnlBill.Name = "pnlBill";
             this.pnlBill.Size = new System.Drawing.Size(469, 667);
             this.pnlBill.TabIndex = 1;
+            // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Location = new System.Drawing.Point(310, 184);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(145, 25);
+            this.lblThoiGian.TabIndex = 16;
+            this.lblThoiGian.Text = "Giờ thanh toán:";
+            // 
+            // lblMaHD
+            // 
+            this.lblMaHD.AutoSize = true;
+            this.lblMaHD.Location = new System.Drawing.Point(11, 121);
+            this.lblMaHD.Name = "lblMaHD";
+            this.lblMaHD.Size = new System.Drawing.Size(122, 25);
+            this.lblMaHD.TabIndex = 15;
+            this.lblMaHD.Text = "Mã hóa đơn:";
             // 
             // label7
             // 
@@ -242,60 +256,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(153, 51);
+            this.label3.Location = new System.Drawing.Point(183, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 25);
+            this.label3.Size = new System.Drawing.Size(79, 25);
             this.label3.TabIndex = 1;
-            this.label3.Text = "69 Hoa Thánh";
+            this.label3.Text = "20 Vinh";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 14);
+            this.label2.Location = new System.Drawing.Point(151, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 25);
+            this.label2.Size = new System.Drawing.Size(157, 25);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Tiệm ăn vặt Tài handsome";
+            this.label2.Text = "Cửa hàng đồ ăn ";
             // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // lblMaHD
-            // 
-            this.lblMaHD.AutoSize = true;
-            this.lblMaHD.Location = new System.Drawing.Point(11, 121);
-            this.lblMaHD.Name = "lblMaHD";
-            this.lblMaHD.Size = new System.Drawing.Size(122, 25);
-            this.lblMaHD.TabIndex = 15;
-            this.lblMaHD.Text = "Mã hóa đơn:";
-            // 
-            // lblThoiGian
-            // 
-            this.lblThoiGian.AutoSize = true;
-            this.lblThoiGian.Location = new System.Drawing.Point(310, 184);
-            this.lblThoiGian.Name = "lblThoiGian";
-            this.lblThoiGian.Size = new System.Drawing.Size(145, 25);
-            this.lblThoiGian.TabIndex = 16;
-            this.lblThoiGian.Text = "Giờ thanh toán:";
-            // 
-            // lblKhachDua
-            // 
-            this.lblKhachDua.AutoSize = true;
-            this.lblKhachDua.Location = new System.Drawing.Point(21, 430);
-            this.lblKhachDua.Name = "lblKhachDua";
-            this.lblKhachDua.Size = new System.Drawing.Size(23, 25);
-            this.lblKhachDua.TabIndex = 17;
-            this.lblKhachDua.Text = "0";
-            // 
-            // lblTienThua
-            // 
-            this.lblTienThua.AutoSize = true;
-            this.lblTienThua.Location = new System.Drawing.Point(26, 473);
-            this.lblTienThua.Name = "lblTienThua";
-            this.lblTienThua.Size = new System.Drawing.Size(23, 25);
-            this.lblTienThua.TabIndex = 18;
-            this.lblTienThua.Text = "0";
             // 
             // frmInHoaDon
             // 
@@ -344,8 +322,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTienThua;
-        private System.Windows.Forms.Label lblKhachDua;
         private System.Windows.Forms.Label lblThoiGian;
         private System.Windows.Forms.Label lblMaHD;
     }

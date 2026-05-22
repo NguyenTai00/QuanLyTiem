@@ -22,7 +22,7 @@ namespace QuanLyTiem.Dao
 
         private DataProvider() { }
 
-        // Hàm thực thi trả về DataTable (Dùng cho SELECT)
+        
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -81,7 +81,7 @@ namespace QuanLyTiem.Dao
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
-                // ... (phần xử lý parameter giống hệt ExecuteQuery)
+               
                 data = command.ExecuteScalar();
                 connection.Close();
             }

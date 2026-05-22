@@ -39,14 +39,14 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDisplayName = new System.Windows.Forms.TextBox();
-            this.nmAccountType = new System.Windows.Forms.NumericUpDown();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.btnResetPassword = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnResetPassword = new System.Windows.Forms.Button();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.nmAccountType = new System.Windows.Forms.NumericUpDown();
+            this.txtDisplayName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tlpRoot.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.tlpContent.SuspendLayout();
@@ -156,7 +156,7 @@
             this.btnAddAccount.Location = new System.Drawing.Point(3, 3);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(99, 54);
-            this.btnAddAccount.TabIndex = 0;
+            this.btnAddAccount.TabIndex = 4;
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
@@ -166,7 +166,7 @@
             this.btnDeleteAccount.Location = new System.Drawing.Point(108, 3);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(99, 54);
-            this.btnDeleteAccount.TabIndex = 1;
+            this.btnDeleteAccount.TabIndex = 5;
             this.btnDeleteAccount.Text = "Xóa";
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
@@ -176,7 +176,7 @@
             this.btnEditAccount.Location = new System.Drawing.Point(213, 3);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(105, 54);
-            this.btnEditAccount.TabIndex = 2;
+            this.btnEditAccount.TabIndex = 6;
             this.btnEditAccount.Text = "Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = true;
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
@@ -197,53 +197,15 @@
             this.pnlContent.Size = new System.Drawing.Size(327, 326);
             this.pnlContent.TabIndex = 1;
             // 
-            // label1
+            // btnRefresh
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên tài khoản:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên hiển thị:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 182);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Loại tài khoản:";
-            // 
-            // txtDisplayName
-            // 
-            this.txtDisplayName.Location = new System.Drawing.Point(149, 112);
-            this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Size = new System.Drawing.Size(172, 30);
-            this.txtDisplayName.TabIndex = 4;
-            // 
-            // nmAccountType
-            // 
-            this.nmAccountType.Location = new System.Drawing.Point(149, 177);
-            this.nmAccountType.Name = "nmAccountType";
-            this.nmAccountType.Size = new System.Drawing.Size(172, 30);
-            this.nmAccountType.TabIndex = 5;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(149, 45);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(172, 30);
-            this.txtUserName.TabIndex = 6;
+            this.btnRefresh.Location = new System.Drawing.Point(205, 274);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(103, 39);
+            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnResetPassword
             // 
@@ -255,15 +217,53 @@
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
-            // btnRefresh
+            // txtUserName
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(205, 274);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(103, 39);
-            this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.Text = "Làm mới";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.txtUserName.Location = new System.Drawing.Point(149, 45);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(172, 30);
+            this.txtUserName.TabIndex = 1;
+            // 
+            // nmAccountType
+            // 
+            this.nmAccountType.Location = new System.Drawing.Point(149, 177);
+            this.nmAccountType.Name = "nmAccountType";
+            this.nmAccountType.Size = new System.Drawing.Size(172, 30);
+            this.nmAccountType.TabIndex = 3;
+            // 
+            // txtDisplayName
+            // 
+            this.txtDisplayName.Location = new System.Drawing.Point(149, 112);
+            this.txtDisplayName.Name = "txtDisplayName";
+            this.txtDisplayName.Size = new System.Drawing.Size(172, 30);
+            this.txtDisplayName.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 182);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Loại tài khoản:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên hiển thị:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tên tài khoản:";
             // 
             // frmTaiKhoan
             // 

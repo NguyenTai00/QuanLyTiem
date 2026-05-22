@@ -261,7 +261,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(178, 3);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(244, 30);
-            this.txtHoTen.TabIndex = 8;
+            this.txtHoTen.TabIndex = 0;
             // 
             // txtEmail
             // 
@@ -269,7 +269,7 @@
             this.txtEmail.Location = new System.Drawing.Point(178, 171);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(244, 30);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtDiaChi
             // 
@@ -277,7 +277,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(178, 213);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(244, 30);
-            this.txtDiaChi.TabIndex = 12;
+            this.txtDiaChi.TabIndex = 6;
             // 
             // txtMoTa
             // 
@@ -285,7 +285,7 @@
             this.txtMoTa.Location = new System.Drawing.Point(178, 297);
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(244, 30);
-            this.txtMoTa.TabIndex = 14;
+            this.txtMoTa.TabIndex = 8;
             // 
             // txtDienThoai
             // 
@@ -293,7 +293,7 @@
             this.txtDienThoai.Location = new System.Drawing.Point(178, 129);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(244, 30);
-            this.txtDienThoai.TabIndex = 15;
+            this.txtDienThoai.TabIndex = 4;
             // 
             // tlpSmallLeft
             // 
@@ -317,7 +317,7 @@
             this.rdoNam.Location = new System.Drawing.Point(3, 3);
             this.rdoNam.Name = "rdoNam";
             this.rdoNam.Size = new System.Drawing.Size(74, 29);
-            this.rdoNam.TabIndex = 0;
+            this.rdoNam.TabIndex = 2;
             this.rdoNam.TabStop = true;
             this.rdoNam.Text = "Nam";
             this.rdoNam.UseVisualStyleBackColor = true;
@@ -328,7 +328,7 @@
             this.rdoNu.Location = new System.Drawing.Point(125, 3);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(58, 29);
-            this.rdoNu.TabIndex = 1;
+            this.rdoNu.TabIndex = 3;
             this.rdoNu.TabStop = true;
             this.rdoNu.Text = "Nữ";
             this.rdoNu.UseVisualStyleBackColor = true;
@@ -340,7 +340,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(178, 45);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(244, 30);
-            this.dtpNgaySinh.TabIndex = 17;
+            this.dtpNgaySinh.TabIndex = 1;
             // 
             // dtpNgayVaoLam
             // 
@@ -349,7 +349,7 @@
             this.dtpNgayVaoLam.Location = new System.Drawing.Point(178, 255);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(244, 30);
-            this.dtpNgayVaoLam.TabIndex = 18;
+            this.dtpNgayVaoLam.TabIndex = 7;
             // 
             // tlpLeftBottom
             // 
@@ -378,7 +378,7 @@
             this.btnThemMoi.Location = new System.Drawing.Point(3, 3);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(134, 31);
-            this.btnThemMoi.TabIndex = 0;
+            this.btnThemMoi.TabIndex = 12;
             this.btnThemMoi.Text = "Thêm mới";
             this.btnThemMoi.UseVisualStyleBackColor = true;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
@@ -389,7 +389,7 @@
             this.btnSua.Location = new System.Drawing.Point(143, 3);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(134, 31);
-            this.btnSua.TabIndex = 1;
+            this.btnSua.TabIndex = 13;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -400,7 +400,7 @@
             this.btnXoa.Location = new System.Drawing.Point(283, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(139, 31);
-            this.btnXoa.TabIndex = 2;
+            this.btnXoa.TabIndex = 14;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -411,7 +411,7 @@
             this.btnHuyGhi.Location = new System.Drawing.Point(3, 40);
             this.btnHuyGhi.Name = "btnHuyGhi";
             this.btnHuyGhi.Size = new System.Drawing.Size(134, 31);
-            this.btnHuyGhi.TabIndex = 3;
+            this.btnHuyGhi.TabIndex = 15;
             this.btnHuyGhi.Text = "Hủy";
             this.btnHuyGhi.UseVisualStyleBackColor = true;
             this.btnHuyGhi.Click += new System.EventHandler(this.btnHuyGhi_Click);
@@ -422,7 +422,7 @@
             this.btnGhi.Location = new System.Drawing.Point(143, 40);
             this.btnGhi.Name = "btnGhi";
             this.btnGhi.Size = new System.Drawing.Size(134, 31);
-            this.btnGhi.TabIndex = 4;
+            this.btnGhi.TabIndex = 15;
             this.btnGhi.Text = "Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
             this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
@@ -433,7 +433,7 @@
             this.btnKetThuc.Location = new System.Drawing.Point(283, 40);
             this.btnKetThuc.Name = "btnKetThuc";
             this.btnKetThuc.Size = new System.Drawing.Size(139, 31);
-            this.btnKetThuc.TabIndex = 5;
+            this.btnKetThuc.TabIndex = 16;
             this.btnKetThuc.Text = "Kết thúc";
             this.btnKetThuc.UseVisualStyleBackColor = true;
             // 
@@ -507,7 +507,7 @@
             this.txtTimKiem.Location = new System.Drawing.Point(3, 51);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(411, 30);
-            this.txtTimKiem.TabIndex = 0;
+            this.txtTimKiem.TabIndex = 11;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // tlpRadio
@@ -532,7 +532,7 @@
             this.rdoTimTheoTen.Location = new System.Drawing.Point(3, 3);
             this.rdoTimTheoTen.Name = "rdoTimTheoTen";
             this.rdoTimTheoTen.Size = new System.Drawing.Size(168, 29);
-            this.rdoTimTheoTen.TabIndex = 0;
+            this.rdoTimTheoTen.TabIndex = 9;
             this.rdoTimTheoTen.TabStop = true;
             this.rdoTimTheoTen.Text = "Tìm theo họ tên";
             this.rdoTimTheoTen.UseVisualStyleBackColor = true;
@@ -543,7 +543,7 @@
             this.radioButton2.Location = new System.Drawing.Point(208, 3);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(140, 29);
-            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabIndex = 10;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tìm theo sđt";
             this.radioButton2.UseVisualStyleBackColor = true;

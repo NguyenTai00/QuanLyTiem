@@ -65,11 +65,11 @@ namespace QuanLyTiem
 
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            cheDo = 1;      // Chuyển sang chế độ Thêm
-            XoaTrang();     // Xóa trắng để nhập mới
-            ThietLapNut(false); // Hiện nút Ghi/Hủy
+            cheDo = 1;      
+            XoaTrang();     
+            ThietLapNut(false); 
             ChoPhepNhapLieu(true);
-            txtTenNCC.Focus();  // Đưa con trỏ vào ô Tên
+            txtTenNCC.Focus();  
 
         }
 
@@ -77,7 +77,7 @@ namespace QuanLyTiem
         {
             cheDo = 0;
             ThietLapNut(true);
-            dgvNCC_CellClick(null, null); // Hiển thị lại dữ liệu cũ của dòng đang chọn
+            dgvNCC_CellClick(null, null); 
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -95,11 +95,11 @@ namespace QuanLyTiem
 
             bool thanhCong = false;
 
-            if (cheDo == 1) // THÊM MỚI
+            if (cheDo == 1) 
             {
                 thanhCong = NhaCungCapDAO.Instance.ThemNCC(ten, dc, sdt, email);
             }
-            else if (cheDo == 2) // SỬA
+            else if (cheDo == 2) 
             {
                 int id = int.Parse(dgvNCC.CurrentRow.Cells["ID"].Value.ToString());
                 thanhCong = NhaCungCapDAO.Instance.SuaNCC(id, ten, dc, sdt, email);
@@ -136,7 +136,7 @@ namespace QuanLyTiem
 
         private void dgvNCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Chỉ hiển thị dữ liệu lên TextBox khi KHÔNG ở chế độ Thêm/Sửa
+            
             if (dgvNCC.CurrentRow != null && cheDo == 0)
             {
                 txtTenNCC.Text = dgvNCC.CurrentRow.Cells["TenNCC"].Value.ToString();
@@ -164,7 +164,7 @@ namespace QuanLyTiem
                 MessageBox.Show("Vui lòng chọn nhà cung cấp cần sửa!");
                 return;
             }
-            cheDo = 2;      // Chuyển sang chế độ Sửa
+            cheDo = 2;      
             ThietLapNut(false);
             ChoPhepNhapLieu(true);
             txtTenNCC.Focus();

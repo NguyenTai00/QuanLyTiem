@@ -14,33 +14,32 @@ namespace QuanLyTiem
 {
     public partial class frmDanhMuc : Form
     {
-        // 1. Tạo một "nguồn dữ liệu" trung gian
+        
         BindingSource categoryList = new BindingSource();
 
         public frmDanhMuc()
         {
             InitializeComponent();
-            // 2. Kết nối Bảng với nguồn dữ liệu trung gian
+           
             dtgvCategory.DataSource = categoryList;
 
             LoadListCategory();
             AddCategoryBinding();
         }
 
-        // Hàm tải dữ liệu từ SQL lên
+     
         void LoadListCategory()
         {
             categoryList.DataSource = CategoryDAO.Instance.GetListCategory();
             dtgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        // ĐÂY LÀ BINDING: Nối cột của bảng với TextBox
         void AddCategoryBinding()
         {
-            // Nối thuộc tính "Text" của txtCategoryID với giá trị cột "ID" trong bảng
+         
             txtCategoryID.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "ID", true, DataSourceUpdateMode.Never));
 
-            // Nối thuộc tính "Text" của txtCategoryName với giá trị cột "Name" trong bảng
+         
             txtCategoryName.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "Name", true, DataSourceUpdateMode.Never));
         }
 
