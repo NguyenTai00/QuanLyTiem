@@ -28,14 +28,16 @@ namespace QuanLyTiem
         void TaiDuLieu()
         {
             dgvNCC.DataSource = NhaCungCapDAO.Instance.LayDanhSachNCC();
-            // Đổi tên cột hiển thị cho đẹp
+
+            // Đổi tên hoặc ẩn cột an toàn bằng cách thêm dấu hỏi chấm (?) trước thuộc tính
             if (dgvNCC.Columns.Count > 0)
             {
-                dgvNCC.Columns["ID"].Visible = false; // Ẩn cột ID
-                dgvNCC.Columns["TenNCC"].HeaderText = "Tên nhà cung cấp";
-                dgvNCC.Columns["DiaChi"].HeaderText = "Địa chỉ";
-                dgvNCC.Columns["DienThoai"].HeaderText = "Điện thoại";
-                dgvNCC.Columns["Email"].HeaderText = "Email";
+                if (dgvNCC.Columns["ID"] != null) dgvNCC.Columns["ID"].Visible = false; // Ẩn cột ID
+
+                if (dgvNCC.Columns["TenNCC"] != null) dgvNCC.Columns["TenNCC"].HeaderText = "Tên nhà cung cấp";
+                if (dgvNCC.Columns["DiaChi"] != null) dgvNCC.Columns["DiaChi"].HeaderText = "Địa chỉ";
+                if (dgvNCC.Columns["DienThoai"] != null) dgvNCC.Columns["DienThoai"].HeaderText = "Điện thoại";
+                if (dgvNCC.Columns["Email"] != null) dgvNCC.Columns["Email"].HeaderText = "Email";
             }
         }
 

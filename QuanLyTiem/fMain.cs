@@ -44,7 +44,8 @@ namespace QuanLyTiem
 
         private void quảnLýTiệmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmHangHoa f = new frmHangHoa();
+            f.ShowDialog();
         }
 
         private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
