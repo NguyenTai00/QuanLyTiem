@@ -1,0 +1,1 @@
+﻿ALTER TABLE Bill ADD PaymentMethod NVARCHAR(50) DEFAULT N'Tiền mặt'

@@ -23,6 +23,7 @@ namespace QuanLyTiem.Dao
 
         public void InsertBill(int id)
         {
+            // Sửa cảnh báo CS0219: Thực thi trực tiếp, không cần gán vào biến query rồi để đó
             DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { id });
         }
 
@@ -32,12 +33,13 @@ namespace QuanLyTiem.Dao
             catch { return 1; }
         }
 
-        public void CheckOut(int id, int discount, float totalPrice)
+        public void CheckOut(int id, int discount, float totalPrice, string paymentMethod)
         {
-            // Cập nhật trạng thái status = 1 (đã thanh toán), ngày ra, giảm giá và tổng tiền
+            // Lưu ý dấu phẩy trước PaymentMethod và dấu nháy đơn bao quanh giá trị chuỗi
             string query = "UPDATE Bill SET DateCheckOut = GETDATE(), status = 1, " +
                            "discount = " + discount + ", totalPrice = " + totalPrice +
-                           " WHERE id = " + id;
+                           ", PaymentMethod = N'" + paymentMethod + "' WHERE id = " + id;
+
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 

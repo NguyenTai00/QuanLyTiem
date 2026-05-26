@@ -32,15 +32,12 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
-            this.lblThoiGian = new System.Windows.Forms.Label();
             this.lblMaHD = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.lblFinalPrice = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.dgvBillDetails = new System.Windows.Forms.DataGridView();
             this.lblStaff = new System.Windows.Forms.Label();
@@ -50,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.lblPaymentMethod = new System.Windows.Forms.Label();
             this.tlpRoot.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlBill.SuspendLayout();
@@ -91,15 +89,13 @@
             // 
             // pnlBill
             // 
-            this.pnlBill.Controls.Add(this.lblThoiGian);
+            this.pnlBill.Controls.Add(this.lblPaymentMethod);
             this.pnlBill.Controls.Add(this.lblMaHD);
             this.pnlBill.Controls.Add(this.label7);
-            this.pnlBill.Controls.Add(this.label6);
             this.pnlBill.Controls.Add(this.label5);
             this.pnlBill.Controls.Add(this.btnClose);
             this.pnlBill.Controls.Add(this.btnPrint);
             this.pnlBill.Controls.Add(this.lblFinalPrice);
-            this.pnlBill.Controls.Add(this.lblDiscount);
             this.pnlBill.Controls.Add(this.lblTotalPrice);
             this.pnlBill.Controls.Add(this.dgvBillDetails);
             this.pnlBill.Controls.Add(this.lblStaff);
@@ -114,15 +110,6 @@
             this.pnlBill.Size = new System.Drawing.Size(469, 667);
             this.pnlBill.TabIndex = 1;
             // 
-            // lblThoiGian
-            // 
-            this.lblThoiGian.AutoSize = true;
-            this.lblThoiGian.Location = new System.Drawing.Point(310, 184);
-            this.lblThoiGian.Name = "lblThoiGian";
-            this.lblThoiGian.Size = new System.Drawing.Size(145, 25);
-            this.lblThoiGian.TabIndex = 16;
-            this.lblThoiGian.Text = "Giờ thanh toán:";
-            // 
             // lblMaHD
             // 
             this.lblMaHD.AutoSize = true;
@@ -135,25 +122,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 585);
+            this.label7.Location = new System.Drawing.Point(17, 585);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "Thanh Toán:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 548);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 25);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Giảm giá:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 505);
+            this.label5.Location = new System.Drawing.Point(17, 548);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 25);
             this.label5.TabIndex = 12;
@@ -188,19 +166,10 @@
             this.lblFinalPrice.TabIndex = 9;
             this.lblFinalPrice.Text = "Thanh toán:";
             // 
-            // lblDiscount
-            // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Location = new System.Drawing.Point(167, 548);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(95, 25);
-            this.lblDiscount.TabIndex = 8;
-            this.lblDiscount.Text = "Giảm giá:";
-            // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(167, 505);
+            this.lblTotalPrice.Location = new System.Drawing.Point(167, 548);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(112, 25);
             this.lblTotalPrice.TabIndex = 7;
@@ -275,6 +244,15 @@
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // lblPaymentMethod
+            // 
+            this.lblPaymentMethod.AutoSize = true;
+            this.lblPaymentMethod.Location = new System.Drawing.Point(17, 456);
+            this.lblPaymentMethod.Name = "lblPaymentMethod";
+            this.lblPaymentMethod.Size = new System.Drawing.Size(100, 25);
+            this.lblPaymentMethod.TabIndex = 17;
+            this.lblPaymentMethod.Text = "Hình thức:";
+            // 
             // frmInHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -316,13 +294,11 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label lblFinalPrice;
-        private System.Windows.Forms.Label lblDiscount;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblThoiGian;
         private System.Windows.Forms.Label lblMaHD;
+        private System.Windows.Forms.Label lblPaymentMethod;
     }
 }

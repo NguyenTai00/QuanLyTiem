@@ -19,25 +19,29 @@ namespace QuanLyTiem
         private TableDTO table;
         private int discount;
         private float finalPrice;
-        private AccountDTO staff; // Khai báo biến lưu nhân viên
+        private AccountDTO staff;
+        private string paymentMethod;
 
 
-        public frmInHoaDon(int idBill, TableDTO table, int discount, AccountDTO acc)
+        public frmInHoaDon(int idBill, TableDTO table, int discount, AccountDTO acc, string payMethod)
         {
             InitializeComponent();
             this.idBill = idBill;
             this.table = table;
             this.discount = discount;
             this.staff = acc;
+            this.paymentMethod = payMethod;
             LoadBillData();
             
         }
 
         void LoadBillData()
         {
+            lblMaHD.Text = "Mã hóa đơn: " + idBill.ToString();
             lblTable.Text = "Bàn: " + table.Name;
             lblDate.Text = "Ngày: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-            lblStaff.Text = "Nhân viên: " + staff.DisplayName; 
+            lblStaff.Text = "Nhân viên: " + staff.DisplayName;
+            lblPaymentMethod.Text = "Hình thức TT: " + paymentMethod;
 
             List<MenuDTO> listMenu = MenuDAO.Instance.GetListMenuByTable(table.ID);
             dgvBillDetails.DataSource = listMenu;
@@ -46,25 +50,18 @@ namespace QuanLyTiem
           
             float totalPrice = 0;
             foreach (MenuDTO item in listMenu) { totalPrice += item.TotalPrice; }
-            finalPrice = totalPrice - (totalPrice / 100) * discount;
-
             lblTotalPrice.Text = totalPrice.ToString("N0") + "đ";
-            lblDiscount.Text = discount.ToString() + "%";
-            lblFinalPrice.Text = finalPrice.ToString("N0") + "đ";
+            lblFinalPrice.Text = totalPrice.ToString("N0") + "đ";
 
-            dgvBillDetails.Columns["FoodName"].HeaderText = "Tên món";
-            dgvBillDetails.Columns["Count"].HeaderText = "Số lượng";
-            dgvBillDetails.Columns["Price"].HeaderText = "Đơn giá";
+            // Đổi tên cột dgvBillDetails cho rõ ràng
+            dgvBillDetails.Columns["Discount"].HeaderText = "Giảm (%)";
             dgvBillDetails.Columns["TotalPrice"].HeaderText = "Thành tiền";
-
-            
-            dgvBillDetails.Columns["TotalPrice"].DefaultCellStyle.Format = "N0";
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
            
-            BillDAO.Instance.CheckOut(idBill, discount, finalPrice);
+            BillDAO.Instance.CheckOut(idBill, discount, finalPrice, this.paymentMethod);
             TableDAO.Instance.UpdateTableStatus(table.ID, "Trống");
 
             // 2. Thực hiện lệnh in

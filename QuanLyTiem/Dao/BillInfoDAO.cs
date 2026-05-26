@@ -12,9 +12,46 @@ namespace QuanLyTiem.Dao
         public static BillInfoDAO Instance { get { if (instance == null) instance = new BillInfoDAO(); return instance; } }
         private BillInfoDAO() { }
 
-        public void InsertBillInfo(int idBill, int idFood, int count)
+        public void UpdateDiscount(
+     int idBill,
+     int idFood,
+     int discount)
         {
-            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBillInfo @idBill , @idFood , @soLuong", new object[] { idBill, idFood, count });
+            string query =
+                "exec USP_UpdateDiscount @idBill , @idFood , @discount";
+
+            DataProvider.Instance.ExecuteNonQuery(
+                query,
+                new object[]
+                {
+            idBill,
+            idFood,
+            discount
+                });
+        }
+
+        public void UpdateFoodDiscount(
+    int idBill,
+    int idFood,
+    int discount)
+        {
+            string query =
+                "exec USP_UpdateFoodDiscount @idBill , @idFood , @discount";
+
+            DataProvider.Instance.ExecuteNonQuery(
+                query,
+                new object[]
+                {
+            idBill,
+            idFood,
+            discount
+                });
+        }
+        public void InsertBillInfo(int idBill, int idFood, int count, int discount)
+        {
+            // Phải có đủ 4 tham số @discount ở đây
+            string query = "exec USP_InsertBillInfo @idBill , @idFood , @count , @discount";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { idBill, idFood, count, discount });
         }
     }
 }

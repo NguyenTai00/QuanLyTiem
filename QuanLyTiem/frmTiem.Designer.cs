@@ -33,35 +33,36 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
-            this.lsvBill = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlPay = new System.Windows.Forms.Panel();
+            this.nmFoodDiscount = new System.Windows.Forms.NumericUpDown();
+            this.cboPaymentMethod = new System.Windows.Forms.ComboBox();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.nmDiscount = new System.Windows.Forms.NumericUpDown();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.cboCategory = new System.Windows.Forms.ComboBox();
             this.cboFood = new System.Windows.Forms.ComboBox();
-            this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.btnAddFood = new System.Windows.Forms.Button();
+            this.pnlNum = new System.Windows.Forms.Panel();
+            this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.tlpRight = new System.Windows.Forms.TableLayoutPanel();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnUpdateDiscount = new System.Windows.Forms.Button();
+            this.dgvBillInfo = new System.Windows.Forms.DataGridView();
             this.tlpRoot.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlpLeft.SuspendLayout();
             this.pnlPay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmFoodDiscount)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.pnlNum.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
             this.tlpRight.SuspendLayout();
             this.pnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpRoot
@@ -116,9 +117,9 @@
             // 
             this.tlpLeft.ColumnCount = 1;
             this.tlpLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpLeft.Controls.Add(this.lsvBill, 0, 1);
             this.tlpLeft.Controls.Add(this.pnlPay, 0, 2);
             this.tlpLeft.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tlpLeft.Controls.Add(this.dgvBillInfo, 0, 1);
             this.tlpLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLeft.Location = new System.Drawing.Point(3, 3);
             this.tlpLeft.Name = "tlpLeft";
@@ -129,48 +130,12 @@
             this.tlpLeft.Size = new System.Drawing.Size(491, 508);
             this.tlpLeft.TabIndex = 0;
             // 
-            // lsvBill
-            // 
-            this.lsvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lsvBill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsvBill.FullRowSelect = true;
-            this.lsvBill.GridLines = true;
-            this.lsvBill.HideSelection = false;
-            this.lsvBill.Location = new System.Drawing.Point(3, 130);
-            this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(485, 248);
-            this.lsvBill.TabIndex = 1;
-            this.lsvBill.UseCompatibleStateImageBehavior = false;
-            this.lsvBill.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên món";
-            this.columnHeader1.Width = 101;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Số lượng";
-            this.columnHeader2.Width = 101;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn giá";
-            this.columnHeader3.Width = 91;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Thành tiền";
-            this.columnHeader4.Width = 114;
-            // 
             // pnlPay
             // 
+            this.pnlPay.Controls.Add(this.btnUpdateDiscount);
+            this.pnlPay.Controls.Add(this.nmFoodDiscount);
+            this.pnlPay.Controls.Add(this.cboPaymentMethod);
             this.pnlPay.Controls.Add(this.btnCheckOut);
-            this.pnlPay.Controls.Add(this.nmDiscount);
             this.pnlPay.Controls.Add(this.txtTotalPrice);
             this.pnlPay.Controls.Add(this.label3);
             this.pnlPay.Controls.Add(this.label2);
@@ -180,9 +145,30 @@
             this.pnlPay.Size = new System.Drawing.Size(485, 121);
             this.pnlPay.TabIndex = 2;
             // 
+            // nmFoodDiscount
+            // 
+            this.nmFoodDiscount.Location = new System.Drawing.Point(151, 6);
+            this.nmFoodDiscount.Name = "nmFoodDiscount";
+            this.nmFoodDiscount.Size = new System.Drawing.Size(120, 30);
+            this.nmFoodDiscount.TabIndex = 3;
+            this.nmFoodDiscount.ValueChanged += new System.EventHandler(this.nmFoodDiscount_ValueChanged);
+            // 
+            // cboPaymentMethod
+            // 
+            this.cboPaymentMethod.FormattingEnabled = true;
+            this.cboPaymentMethod.Items.AddRange(new object[] {
+            "Tiền mặt",
+            "Chuyển khoản"});
+            this.cboPaymentMethod.Location = new System.Drawing.Point(317, 10);
+            this.cboPaymentMethod.Name = "cboPaymentMethod";
+            this.cboPaymentMethod.Size = new System.Drawing.Size(121, 33);
+            this.cboPaymentMethod.TabIndex = 7;
+            this.cboPaymentMethod.SelectedIndexChanged += new System.EventHandler(this.cboPaymentMethod_SelectedIndexChanged);
+            // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Location = new System.Drawing.Point(338, 11);
+            this.btnCheckOut.ForeColor = System.Drawing.Color.Red;
+            this.btnCheckOut.Location = new System.Drawing.Point(288, 50);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(166, 66);
             this.btnCheckOut.TabIndex = 6;
@@ -190,16 +176,9 @@
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // nmDiscount
-            // 
-            this.nmDiscount.Location = new System.Drawing.Point(183, 11);
-            this.nmDiscount.Name = "nmDiscount";
-            this.nmDiscount.Size = new System.Drawing.Size(120, 30);
-            this.nmDiscount.TabIndex = 4;
-            // 
             // txtTotalPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(183, 47);
+            this.txtTotalPrice.Location = new System.Drawing.Point(140, 47);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.Size = new System.Drawing.Size(120, 30);
             this.txtTotalPrice.TabIndex = 5;
@@ -207,7 +186,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 50);
+            this.label3.Location = new System.Drawing.Point(12, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 25);
             this.label3.TabIndex = 1;
@@ -216,11 +195,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 11);
+            this.label2.Location = new System.Drawing.Point(12, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 25);
+            this.label2.Size = new System.Drawing.Size(133, 25);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Giảm giá(%)";
+            this.label2.Text = "Giảm món(%)";
             // 
             // tableLayoutPanel2
             // 
@@ -229,14 +208,14 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.73657F));
             this.tableLayoutPanel2.Controls.Add(this.cboCategory, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.cboFood, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.nmFoodCount, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnAddFood, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.pnlNum, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.15702F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.84298F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(485, 121);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
@@ -252,14 +231,33 @@
             // cboFood
             // 
             this.cboFood.FormattingEnabled = true;
-            this.cboFood.Location = new System.Drawing.Point(3, 63);
+            this.cboFood.Location = new System.Drawing.Point(3, 76);
             this.cboFood.Name = "cboFood";
             this.cboFood.Size = new System.Drawing.Size(257, 33);
             this.cboFood.TabIndex = 1;
             // 
+            // btnAddFood
+            // 
+            this.btnAddFood.ForeColor = System.Drawing.Color.Blue;
+            this.btnAddFood.Location = new System.Drawing.Point(329, 76);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(125, 33);
+            this.btnAddFood.TabIndex = 3;
+            this.btnAddFood.Text = "Thêm";
+            this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
+            // 
+            // pnlNum
+            // 
+            this.pnlNum.Controls.Add(this.nmFoodCount);
+            this.pnlNum.Location = new System.Drawing.Point(329, 3);
+            this.pnlNum.Name = "pnlNum";
+            this.pnlNum.Size = new System.Drawing.Size(153, 67);
+            this.pnlNum.TabIndex = 4;
+            // 
             // nmFoodCount
             // 
-            this.nmFoodCount.Location = new System.Drawing.Point(329, 3);
+            this.nmFoodCount.Location = new System.Drawing.Point(5, 3);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
@@ -268,16 +266,6 @@
             this.nmFoodCount.Name = "nmFoodCount";
             this.nmFoodCount.Size = new System.Drawing.Size(120, 30);
             this.nmFoodCount.TabIndex = 2;
-            // 
-            // btnAddFood
-            // 
-            this.btnAddFood.Location = new System.Drawing.Point(329, 63);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(125, 33);
-            this.btnAddFood.TabIndex = 3;
-            this.btnAddFood.Text = "Thêm";
-            this.btnAddFood.UseVisualStyleBackColor = true;
-            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // tlpRight
             // 
@@ -312,6 +300,33 @@
             this.flpTable.Size = new System.Drawing.Size(485, 502);
             this.flpTable.TabIndex = 0;
             // 
+            // btnUpdateDiscount
+            // 
+            this.btnUpdateDiscount.Location = new System.Drawing.Point(43, 78);
+            this.btnUpdateDiscount.Name = "btnUpdateDiscount";
+            this.btnUpdateDiscount.Size = new System.Drawing.Size(182, 37);
+            this.btnUpdateDiscount.TabIndex = 8;
+            this.btnUpdateDiscount.Text = "Cập nhật giảm giá";
+            this.btnUpdateDiscount.UseVisualStyleBackColor = true;
+            this.btnUpdateDiscount.Click += new System.EventHandler(this.btnUpdateDiscount_Click);
+            // 
+            // dgvBillInfo
+            // 
+            this.dgvBillInfo.AllowUserToAddRows = false;
+            this.dgvBillInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBillInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBillInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBillInfo.Location = new System.Drawing.Point(3, 130);
+            this.dgvBillInfo.Name = "dgvBillInfo";
+            this.dgvBillInfo.ReadOnly = true;
+            this.dgvBillInfo.RowHeadersWidth = 51;
+            this.dgvBillInfo.RowTemplate.Height = 24;
+            this.dgvBillInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBillInfo.Size = new System.Drawing.Size(485, 248);
+            this.dgvBillInfo.TabIndex = 4;
+            this.dgvBillInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillInfo_CellClick);
+            this.dgvBillInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillInfo_CellContentClick);
+            // 
             // frmTiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -332,11 +347,13 @@
             this.tlpLeft.ResumeLayout(false);
             this.pnlPay.ResumeLayout(false);
             this.pnlPay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmFoodDiscount)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.pnlNum.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
             this.tlpRight.ResumeLayout(false);
             this.pnlContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,14 +366,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tlpLeft;
         private System.Windows.Forms.TableLayoutPanel tlpRight;
-        private System.Windows.Forms.ListView lsvBill;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Panel pnlPay;
         private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.NumericUpDown nmDiscount;
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -367,5 +378,10 @@
         private System.Windows.Forms.ComboBox cboFood;
         private System.Windows.Forms.NumericUpDown nmFoodCount;
         private System.Windows.Forms.Button btnAddFood;
+        private System.Windows.Forms.ComboBox cboPaymentMethod;
+        private System.Windows.Forms.Panel pnlNum;
+        private System.Windows.Forms.NumericUpDown nmFoodDiscount;
+        private System.Windows.Forms.Button btnUpdateDiscount;
+        private System.Windows.Forms.DataGridView dgvBillInfo;
     }
 }
