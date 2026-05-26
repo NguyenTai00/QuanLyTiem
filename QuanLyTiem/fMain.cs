@@ -159,5 +159,11 @@ namespace QuanLyTiem
             frmNhaCungCap f = new frmNhaCungCap();
             OpenChildForm(f, ChildFormMode.Fill);
         }
+
+        private void báoCáoKiểmKêHàngNgàyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKiemKe f = new frmKiemKe(loginAccount);
+            OpenChildForm(f, ChildFormMode.Fill);
+        }
     }
 }

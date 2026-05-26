@@ -99,7 +99,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.60942F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.39058F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
@@ -177,7 +177,7 @@
             this.txtUserName.Location = new System.Drawing.Point(238, 3);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(529, 30);
+            this.txtUserName.Size = new System.Drawing.Size(528, 30);
             this.txtUserName.TabIndex = 5;
             this.txtUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -186,7 +186,7 @@
             this.txtDisplayName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDisplayName.Location = new System.Drawing.Point(238, 84);
             this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Size = new System.Drawing.Size(529, 30);
+            this.txtDisplayName.Size = new System.Drawing.Size(528, 30);
             this.txtDisplayName.TabIndex = 6;
             // 
             // txtPassWord
@@ -194,7 +194,7 @@
             this.txtPassWord.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPassWord.Location = new System.Drawing.Point(238, 165);
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(529, 30);
+            this.txtPassWord.Size = new System.Drawing.Size(528, 30);
             this.txtPassWord.TabIndex = 7;
             this.txtPassWord.UseSystemPasswordChar = true;
             // 
@@ -203,7 +203,7 @@
             this.txtNewPass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNewPass.Location = new System.Drawing.Point(238, 246);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(529, 30);
+            this.txtNewPass.Size = new System.Drawing.Size(528, 30);
             this.txtNewPass.TabIndex = 8;
             this.txtNewPass.UseSystemPasswordChar = true;
             // 
@@ -212,7 +212,7 @@
             this.txtReEnterPass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtReEnterPass.Location = new System.Drawing.Point(238, 327);
             this.txtReEnterPass.Name = "txtReEnterPass";
-            this.txtReEnterPass.Size = new System.Drawing.Size(529, 30);
+            this.txtReEnterPass.Size = new System.Drawing.Size(528, 30);
             this.txtReEnterPass.TabIndex = 9;
             this.txtReEnterPass.UseSystemPasswordChar = true;
             this.txtReEnterPass.TextChanged += new System.EventHandler(this.txtReEnterPass_TextChanged);
@@ -240,7 +240,7 @@
             // ckbShowPass
             // 
             this.ckbShowPass.AutoSize = true;
-            this.ckbShowPass.Location = new System.Drawing.Point(773, 165);
+            this.ckbShowPass.Location = new System.Drawing.Point(772, 165);
             this.ckbShowPass.Name = "ckbShowPass";
             this.ckbShowPass.Size = new System.Drawing.Size(99, 29);
             this.ckbShowPass.TabIndex = 12;

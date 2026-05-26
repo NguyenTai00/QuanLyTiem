@@ -49,5 +49,20 @@ namespace QuanLyTiem.Dao
             // Lưu ý: Ta dùng định dạng yyyyMMdd để SQL không bị nhầm lẫn ngày tháng
             return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
         }
+
+        public DataTable GetReportByBill(DateTime date)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetReportByBill @date", new object[] { date });
+        }
+
+        public DataTable GetReportByFood(DateTime date)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetReportByFood @date", new object[] { date });
+        }
+
+        public DataTable GetDailySummary(DateTime date)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetDailySummary @date", new object[] { date });
+        }
     }
 }
