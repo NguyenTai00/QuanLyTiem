@@ -171,5 +171,11 @@ namespace QuanLyTiem
             frmBaoCaoBanHang f = new frmBaoCaoBanHang(loginAccount);
             OpenChildForm(f, ChildFormMode.Fill);
         }
+
+        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNhapHang f = new frmNhapHang(loginAccount);
+            OpenChildForm(f, ChildFormMode.Fill);
+        }
     }
 }

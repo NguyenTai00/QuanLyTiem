@@ -100,7 +100,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.60942F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.39058F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
@@ -176,45 +176,45 @@
             // 
             this.txtUserName.BackColor = System.Drawing.Color.White;
             this.txtUserName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUserName.Location = new System.Drawing.Point(237, 3);
+            this.txtUserName.Location = new System.Drawing.Point(236, 3);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(524, 30);
+            this.txtUserName.Size = new System.Drawing.Size(523, 30);
             this.txtUserName.TabIndex = 5;
             this.txtUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtDisplayName
             // 
             this.txtDisplayName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDisplayName.Location = new System.Drawing.Point(237, 84);
+            this.txtDisplayName.Location = new System.Drawing.Point(236, 84);
             this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Size = new System.Drawing.Size(524, 30);
+            this.txtDisplayName.Size = new System.Drawing.Size(523, 30);
             this.txtDisplayName.TabIndex = 6;
             // 
             // txtPassWord
             // 
             this.txtPassWord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPassWord.Location = new System.Drawing.Point(237, 165);
+            this.txtPassWord.Location = new System.Drawing.Point(236, 165);
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(524, 30);
+            this.txtPassWord.Size = new System.Drawing.Size(523, 30);
             this.txtPassWord.TabIndex = 7;
             this.txtPassWord.UseSystemPasswordChar = true;
             // 
             // txtNewPass
             // 
             this.txtNewPass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNewPass.Location = new System.Drawing.Point(237, 246);
+            this.txtNewPass.Location = new System.Drawing.Point(236, 246);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(524, 30);
+            this.txtNewPass.Size = new System.Drawing.Size(523, 30);
             this.txtNewPass.TabIndex = 8;
             this.txtNewPass.UseSystemPasswordChar = true;
             // 
             // txtReEnterPass
             // 
             this.txtReEnterPass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReEnterPass.Location = new System.Drawing.Point(237, 327);
+            this.txtReEnterPass.Location = new System.Drawing.Point(236, 327);
             this.txtReEnterPass.Name = "txtReEnterPass";
-            this.txtReEnterPass.Size = new System.Drawing.Size(524, 30);
+            this.txtReEnterPass.Size = new System.Drawing.Size(523, 30);
             this.txtReEnterPass.TabIndex = 9;
             this.txtReEnterPass.UseSystemPasswordChar = true;
             this.txtReEnterPass.TextChanged += new System.EventHandler(this.txtReEnterPass_TextChanged);
@@ -224,9 +224,9 @@
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
-            this.btnExit.Location = new System.Drawing.Point(237, 408);
+            this.btnExit.Location = new System.Drawing.Point(236, 408);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(524, 101);
+            this.btnExit.Size = new System.Drawing.Size(523, 101);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "🏃 Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             // ckbShowPass
             // 
             this.ckbShowPass.AutoSize = true;
-            this.ckbShowPass.Location = new System.Drawing.Point(767, 165);
+            this.ckbShowPass.Location = new System.Drawing.Point(765, 165);
             this.ckbShowPass.Name = "ckbShowPass";
             this.ckbShowPass.Size = new System.Drawing.Size(99, 29);
             this.ckbShowPass.TabIndex = 12;
@@ -250,7 +250,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.btnUpdate.Location = new System.Drawing.Point(3, 408);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(228, 101);
+            this.btnUpdate.Size = new System.Drawing.Size(227, 101);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "🆙 Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;

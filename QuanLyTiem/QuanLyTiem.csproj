@@ -82,8 +82,10 @@
     <Compile Include="Dao\DataProvider.cs" />
     <Compile Include="Dao\FoodDAO.cs" />
     <Compile Include="Dao\MenuDAO.cs" />
+    <Compile Include="Dao\NguyenLieuDAO.cs" />
     <Compile Include="Dao\NhaCungCapDAO.cs" />
     <Compile Include="Dao\NhanVienDAO.cs" />
+    <Compile Include="Dao\PhieuNhapDAO.cs" />
     <Compile Include="Dao\TableDAO.cs" />
     <Compile Include="dsQuanLyTiem.cs">
       <DependentUpon>dsQuanLyTiem.xsd</DependentUpon>
@@ -172,6 +174,12 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapHang.Designer.cs">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapHang.resx">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaiKhoan.resx">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>

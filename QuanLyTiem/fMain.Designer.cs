@@ -77,7 +77,7 @@
             this.quảnLýNhânViênToolStripMenuItem,
             this.quảnLýNhàCungCấpToolStripMenuItem});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
-            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.hệThốngToolStripMenuItem.Text = "Admin";
             this.hệThốngToolStripMenuItem.Click += new System.EventHandler(this.hệThốngToolStripMenuItem_Click);
             // 
@@ -131,7 +131,7 @@
             this.thôngTinTàiKhoảnToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.quảnLýToolStripMenuItem.Text = "Quản lý";
             this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
@@ -173,8 +173,9 @@
             // nhậpHàngToolStripMenuItem
             // 
             this.nhậpHàngToolStripMenuItem.Name = "nhậpHàngToolStripMenuItem";
-            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhậpHàngToolStripMenuItem.Text = "Nhập hàng";
+            this.nhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.nhậpHàngToolStripMenuItem_Click);
             // 
             // bánHàngToolStripMenuItem
             // 
@@ -191,7 +192,7 @@
             this.báoCáoBánHàngToolStripMenuItem,
             this.doanhThuToolStripMenuItem1});
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
-            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.báoCáoToolStripMenuItem.Text = "Báo cáo";
             // 
             // báoCáoKiểmKêHàngNgàyToolStripMenuItem
