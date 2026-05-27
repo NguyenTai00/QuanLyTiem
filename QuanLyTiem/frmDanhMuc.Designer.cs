@@ -30,31 +30,32 @@
         {
             this.tlpRoot = new System.Windows.Forms.TableLayoutPanel();
             this.pnlname = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tlpContent = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
-            this.dtgvCategory = new System.Windows.Forms.DataGridView();
             this.tlpBottomLeft = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.btnShowCategory = new System.Windows.Forms.Button();
             this.tlpRight = new System.Windows.Forms.TableLayoutPanel();
             this.tlpBottom = new System.Windows.Forms.TableLayoutPanel();
-            this.btnEditCategory = new System.Windows.Forms.Button();
             this.btnDeleteCategory = new System.Windows.Forms.Button();
+            this.btnEditCategory = new System.Windows.Forms.Button();
             this.tlpSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtgvCategory = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tlpRoot.SuspendLayout();
             this.pnlname.SuspendLayout();
             this.tlpContent.SuspendLayout();
             this.tlpLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
             this.tlpBottomLeft.SuspendLayout();
             this.tlpRight.SuspendLayout();
             this.tlpBottom.SuspendLayout();
             this.tlpSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpRoot
@@ -74,23 +75,13 @@
             // 
             // pnlname
             // 
+            this.pnlname.Controls.Add(this.label4);
             this.pnlname.Controls.Add(this.label1);
             this.pnlname.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlname.Location = new System.Drawing.Point(3, 3);
             this.pnlname.Name = "pnlname";
             this.pnlname.Size = new System.Drawing.Size(793, 74);
             this.pnlname.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.label1.Size = new System.Drawing.Size(186, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý danh mục";
             // 
             // tlpContent
             // 
@@ -122,17 +113,7 @@
             this.tlpLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tlpLeft.Size = new System.Drawing.Size(390, 424);
             this.tlpLeft.TabIndex = 0;
-            // 
-            // dtgvCategory
-            // 
-            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvCategory.Location = new System.Drawing.Point(3, 3);
-            this.dtgvCategory.Name = "dtgvCategory";
-            this.dtgvCategory.RowHeadersWidth = 51;
-            this.dtgvCategory.RowTemplate.Height = 24;
-            this.dtgvCategory.Size = new System.Drawing.Size(384, 338);
-            this.dtgvCategory.TabIndex = 0;
+            this.tlpLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpLeft_Paint);
             // 
             // tlpBottomLeft
             // 
@@ -149,25 +130,36 @@
             this.tlpBottomLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpBottomLeft.Size = new System.Drawing.Size(384, 74);
             this.tlpBottomLeft.TabIndex = 1;
+            this.tlpBottomLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpBottomLeft_Paint);
             // 
             // btnAddCategory
             // 
+            this.btnAddCategory.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnAddCategory.FlatAppearance.BorderSize = 0;
+            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAddCategory.Location = new System.Drawing.Point(3, 3);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(110, 42);
+            this.btnAddCategory.Size = new System.Drawing.Size(186, 42);
             this.btnAddCategory.TabIndex = 1;
             this.btnAddCategory.Text = "Thêm";
-            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.UseVisualStyleBackColor = false;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // btnShowCategory
             // 
+            this.btnShowCategory.BackColor = System.Drawing.Color.Peru;
+            this.btnShowCategory.FlatAppearance.BorderSize = 0;
+            this.btnShowCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnShowCategory.Location = new System.Drawing.Point(195, 3);
             this.btnShowCategory.Name = "btnShowCategory";
-            this.btnShowCategory.Size = new System.Drawing.Size(107, 42);
+            this.btnShowCategory.Size = new System.Drawing.Size(186, 42);
             this.btnShowCategory.TabIndex = 2;
             this.btnShowCategory.Text = "Xem";
-            this.btnShowCategory.UseVisualStyleBackColor = true;
+            this.btnShowCategory.UseVisualStyleBackColor = false;
             this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
             // 
             // tlpRight
@@ -190,8 +182,8 @@
             this.tlpBottom.ColumnCount = 2;
             this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpBottom.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpBottom.Controls.Add(this.btnEditCategory, 0, 0);
             this.tlpBottom.Controls.Add(this.btnDeleteCategory, 1, 0);
+            this.tlpBottom.Controls.Add(this.btnEditCategory, 0, 0);
             this.tlpBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpBottom.Location = new System.Drawing.Point(3, 347);
             this.tlpBottom.Name = "tlpBottom";
@@ -201,35 +193,46 @@
             this.tlpBottom.Size = new System.Drawing.Size(385, 74);
             this.tlpBottom.TabIndex = 0;
             // 
-            // btnEditCategory
-            // 
-            this.btnEditCategory.Location = new System.Drawing.Point(3, 3);
-            this.btnEditCategory.Name = "btnEditCategory";
-            this.btnEditCategory.Size = new System.Drawing.Size(100, 39);
-            this.btnEditCategory.TabIndex = 0;
-            this.btnEditCategory.Text = "Sửa";
-            this.btnEditCategory.UseVisualStyleBackColor = true;
-            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
-            // 
             // btnDeleteCategory
             // 
+            this.btnDeleteCategory.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteCategory.FlatAppearance.BorderSize = 0;
+            this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDeleteCategory.Location = new System.Drawing.Point(195, 3);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(89, 39);
+            this.btnDeleteCategory.Size = new System.Drawing.Size(187, 39);
             this.btnDeleteCategory.TabIndex = 1;
             this.btnDeleteCategory.Text = "Xóa";
-            this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.UseVisualStyleBackColor = false;
             this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
+            // 
+            // btnEditCategory
+            // 
+            this.btnEditCategory.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnEditCategory.FlatAppearance.BorderSize = 0;
+            this.btnEditCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditCategory.Location = new System.Drawing.Point(3, 3);
+            this.btnEditCategory.Name = "btnEditCategory";
+            this.btnEditCategory.Size = new System.Drawing.Size(186, 39);
+            this.btnEditCategory.TabIndex = 0;
+            this.btnEditCategory.Text = "Sửa";
+            this.btnEditCategory.UseVisualStyleBackColor = false;
+            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // tlpSearch
             // 
+            this.tlpSearch.BackColor = System.Drawing.Color.Gainsboro;
             this.tlpSearch.ColumnCount = 2;
             this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.51948F));
             this.tlpSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.48052F));
-            this.tlpSearch.Controls.Add(this.label2, 0, 0);
             this.tlpSearch.Controls.Add(this.label3, 0, 1);
             this.tlpSearch.Controls.Add(this.txtCategoryID, 1, 0);
             this.tlpSearch.Controls.Add(this.txtCategoryName, 1, 1);
+            this.tlpSearch.Controls.Add(this.label2, 0, 0);
             this.tlpSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpSearch.Location = new System.Drawing.Point(3, 3);
             this.tlpSearch.Name = "tlpSearch";
@@ -239,21 +242,15 @@
             this.tlpSearch.Size = new System.Drawing.Size(385, 100);
             this.tlpSearch.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "ID:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(3, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 25);
+            this.label3.Size = new System.Drawing.Size(136, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "Tên danh mục:";
             // 
@@ -273,14 +270,63 @@
             this.txtCategoryName.Size = new System.Drawing.Size(223, 30);
             this.txtCategoryName.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Gainsboro;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 28);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ID:";
+            // 
+            // dtgvCategory
+            // 
+            this.dtgvCategory.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvCategory.Location = new System.Drawing.Point(3, 3);
+            this.dtgvCategory.Name = "dtgvCategory";
+            this.dtgvCategory.RowHeadersWidth = 51;
+            this.dtgvCategory.RowTemplate.Height = 24;
+            this.dtgvCategory.Size = new System.Drawing.Size(384, 338);
+            this.dtgvCategory.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(241, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(208, 31);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Quản lý danh mục";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
+            this.label1.Size = new System.Drawing.Size(223, 46);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quản lý danh mục";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // frmDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(799, 516);
             this.Controls.Add(this.tlpRoot);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDanhMuc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -290,12 +336,12 @@
             this.pnlname.PerformLayout();
             this.tlpContent.ResumeLayout(false);
             this.tlpLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
             this.tlpBottomLeft.ResumeLayout(false);
             this.tlpRight.ResumeLayout(false);
             this.tlpBottom.ResumeLayout(false);
             this.tlpSearch.ResumeLayout(false);
             this.tlpSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,10 +350,8 @@
 
         private System.Windows.Forms.TableLayoutPanel tlpRoot;
         private System.Windows.Forms.Panel pnlname;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tlpContent;
         private System.Windows.Forms.TableLayoutPanel tlpLeft;
-        private System.Windows.Forms.DataGridView dtgvCategory;
         private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.TableLayoutPanel tlpRight;
         private System.Windows.Forms.TableLayoutPanel tlpBottom;
@@ -320,5 +364,8 @@
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.TableLayoutPanel tlpBottomLeft;
         private System.Windows.Forms.Button btnShowCategory;
+        private System.Windows.Forms.DataGridView dtgvCategory;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
     }
 }

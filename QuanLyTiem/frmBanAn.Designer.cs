@@ -34,6 +34,8 @@
             this.tlpContent = new System.Windows.Forms.TableLayoutPanel();
             this.tlpleftContent = new System.Windows.Forms.TableLayoutPanel();
             this.dtgvTable = new System.Windows.Forms.DataGridView();
+            this.pnlBottomleft = new System.Windows.Forms.Panel();
+            this.btnAddTable = new System.Windows.Forms.Button();
             this.tlpRightContent = new System.Windows.Forms.TableLayoutPanel();
             this.tlpRightTop = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,19 +44,17 @@
             this.txtTableID = new System.Windows.Forms.TextBox();
             this.txtTableName = new System.Windows.Forms.TextBox();
             this.txtTableStatus = new System.Windows.Forms.TextBox();
-            this.pnlBottomleft = new System.Windows.Forms.Panel();
             this.pnlBottomRight = new System.Windows.Forms.Panel();
-            this.btnAddTable = new System.Windows.Forms.Button();
-            this.btnEditTable = new System.Windows.Forms.Button();
             this.btnDeleteTable = new System.Windows.Forms.Button();
+            this.btnEditTable = new System.Windows.Forms.Button();
             this.tlpRoot.SuspendLayout();
             this.pnlTitle.SuspendLayout();
             this.tlpContent.SuspendLayout();
             this.tlpleftContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).BeginInit();
+            this.pnlBottomleft.SuspendLayout();
             this.tlpRightContent.SuspendLayout();
             this.tlpRightTop.SuspendLayout();
-            this.pnlBottomleft.SuspendLayout();
             this.pnlBottomRight.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,25 @@
             this.dtgvTable.RowTemplate.Height = 24;
             this.dtgvTable.Size = new System.Drawing.Size(412, 334);
             this.dtgvTable.TabIndex = 0;
+            // 
+            // pnlBottomleft
+            // 
+            this.pnlBottomleft.Controls.Add(this.btnAddTable);
+            this.pnlBottomleft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBottomleft.Location = new System.Drawing.Point(3, 343);
+            this.pnlBottomleft.Name = "pnlBottomleft";
+            this.pnlBottomleft.Size = new System.Drawing.Size(412, 74);
+            this.pnlBottomleft.TabIndex = 1;
+            // 
+            // btnAddTable
+            // 
+            this.btnAddTable.Location = new System.Drawing.Point(110, 13);
+            this.btnAddTable.Name = "btnAddTable";
+            this.btnAddTable.Size = new System.Drawing.Size(102, 45);
+            this.btnAddTable.TabIndex = 0;
+            this.btnAddTable.Text = "Thêm";
+            this.btnAddTable.UseVisualStyleBackColor = true;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // tlpRightContent
             // 
@@ -222,15 +241,6 @@
             this.txtTableStatus.Size = new System.Drawing.Size(290, 30);
             this.txtTableStatus.TabIndex = 5;
             // 
-            // pnlBottomleft
-            // 
-            this.pnlBottomleft.Controls.Add(this.btnAddTable);
-            this.pnlBottomleft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBottomleft.Location = new System.Drawing.Point(3, 343);
-            this.pnlBottomleft.Name = "pnlBottomleft";
-            this.pnlBottomleft.Size = new System.Drawing.Size(412, 74);
-            this.pnlBottomleft.TabIndex = 1;
-            // 
             // pnlBottomRight
             // 
             this.pnlBottomRight.Controls.Add(this.btnDeleteTable);
@@ -241,15 +251,15 @@
             this.pnlBottomRight.Size = new System.Drawing.Size(412, 74);
             this.pnlBottomRight.TabIndex = 1;
             // 
-            // btnAddTable
+            // btnDeleteTable
             // 
-            this.btnAddTable.Location = new System.Drawing.Point(110, 13);
-            this.btnAddTable.Name = "btnAddTable";
-            this.btnAddTable.Size = new System.Drawing.Size(102, 45);
-            this.btnAddTable.TabIndex = 0;
-            this.btnAddTable.Text = "Thêm";
-            this.btnAddTable.UseVisualStyleBackColor = true;
-            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
+            this.btnDeleteTable.Location = new System.Drawing.Point(277, 13);
+            this.btnDeleteTable.Name = "btnDeleteTable";
+            this.btnDeleteTable.Size = new System.Drawing.Size(75, 45);
+            this.btnDeleteTable.TabIndex = 1;
+            this.btnDeleteTable.Text = "Xóa";
+            this.btnDeleteTable.UseVisualStyleBackColor = true;
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // btnEditTable
             // 
@@ -260,16 +270,6 @@
             this.btnEditTable.Text = "Sửa ";
             this.btnEditTable.UseVisualStyleBackColor = true;
             this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
-            // 
-            // btnDeleteTable
-            // 
-            this.btnDeleteTable.Location = new System.Drawing.Point(272, 13);
-            this.btnDeleteTable.Name = "btnDeleteTable";
-            this.btnDeleteTable.Size = new System.Drawing.Size(75, 45);
-            this.btnDeleteTable.TabIndex = 1;
-            this.btnDeleteTable.Text = "Xóa";
-            this.btnDeleteTable.UseVisualStyleBackColor = true;
-            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // frmBanAn
             // 
@@ -289,10 +289,10 @@
             this.tlpContent.ResumeLayout(false);
             this.tlpleftContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).EndInit();
+            this.pnlBottomleft.ResumeLayout(false);
             this.tlpRightContent.ResumeLayout(false);
             this.tlpRightTop.ResumeLayout(false);
             this.tlpRightTop.PerformLayout();
-            this.pnlBottomleft.ResumeLayout(false);
             this.pnlBottomRight.ResumeLayout(false);
             this.ResumeLayout(false);
 

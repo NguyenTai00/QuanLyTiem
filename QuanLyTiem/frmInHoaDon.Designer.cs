@@ -32,6 +32,10 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
+            this.lblTienThua = new System.Windows.Forms.Label();
+            this.lblKhachDua = new System.Windows.Forms.Label();
+            this.lblThoiGian = new System.Windows.Forms.Label();
+            this.lblMaHD = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.lblMaHD = new System.Windows.Forms.Label();
-            this.lblThoiGian = new System.Windows.Forms.Label();
-            this.lblKhachDua = new System.Windows.Forms.Label();
-            this.lblTienThua = new System.Windows.Forms.Label();
             this.tlpRoot.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlBill.SuspendLayout();
@@ -75,6 +75,7 @@
             // 
             // pnlHeader
             // 
+            this.pnlHeader.BackColor = System.Drawing.Color.SeaShell;
             this.pnlHeader.Controls.Add(this.label1);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHeader.Location = new System.Drawing.Point(3, 3);
@@ -85,9 +86,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(125, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 25);
+            this.label1.Size = new System.Drawing.Size(247, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa Đơn Thanh Toán";
             // 
@@ -118,6 +120,42 @@
             this.pnlBill.Size = new System.Drawing.Size(469, 667);
             this.pnlBill.TabIndex = 1;
             // 
+            // lblTienThua
+            // 
+            this.lblTienThua.AutoSize = true;
+            this.lblTienThua.Location = new System.Drawing.Point(16, 457);
+            this.lblTienThua.Name = "lblTienThua";
+            this.lblTienThua.Size = new System.Drawing.Size(23, 25);
+            this.lblTienThua.TabIndex = 18;
+            this.lblTienThua.Text = "0";
+            // 
+            // lblKhachDua
+            // 
+            this.lblKhachDua.AutoSize = true;
+            this.lblKhachDua.Location = new System.Drawing.Point(16, 414);
+            this.lblKhachDua.Name = "lblKhachDua";
+            this.lblKhachDua.Size = new System.Drawing.Size(23, 25);
+            this.lblKhachDua.TabIndex = 17;
+            this.lblKhachDua.Text = "0";
+            // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Location = new System.Drawing.Point(11, 213);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(145, 25);
+            this.lblThoiGian.TabIndex = 16;
+            this.lblThoiGian.Text = "Giờ thanh toán:";
+            // 
+            // lblMaHD
+            // 
+            this.lblMaHD.AutoSize = true;
+            this.lblMaHD.Location = new System.Drawing.Point(11, 121);
+            this.lblMaHD.Name = "lblMaHD";
+            this.lblMaHD.Size = new System.Drawing.Size(122, 25);
+            this.lblMaHD.TabIndex = 15;
+            this.lblMaHD.Text = "Mã hóa đơn:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -147,28 +185,30 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClose.Location = new System.Drawing.Point(269, 622);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(118, 36);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Đóng";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrint
             // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnPrint.Location = new System.Drawing.Point(68, 629);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(92, 29);
             this.btnPrint.TabIndex = 10;
             this.btnPrint.Text = "In";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // lblFinalPrice
             // 
             this.lblFinalPrice.AutoSize = true;
-            this.lblFinalPrice.Location = new System.Drawing.Point(167, 585);
+            this.lblFinalPrice.Location = new System.Drawing.Point(219, 585);
             this.lblFinalPrice.Name = "lblFinalPrice";
             this.lblFinalPrice.Size = new System.Drawing.Size(118, 25);
             this.lblFinalPrice.TabIndex = 9;
@@ -177,7 +217,7 @@
             // lblDiscount
             // 
             this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Location = new System.Drawing.Point(167, 548);
+            this.lblDiscount.Location = new System.Drawing.Point(219, 548);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(95, 25);
             this.lblDiscount.TabIndex = 8;
@@ -186,7 +226,7 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(167, 505);
+            this.lblTotalPrice.Location = new System.Drawing.Point(219, 505);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(112, 25);
             this.lblTotalPrice.TabIndex = 7;
@@ -194,9 +234,10 @@
             // 
             // dgvBillDetails
             // 
+            this.dgvBillDetails.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvBillDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillDetails.Location = new System.Drawing.Point(16, 254);
+            this.dgvBillDetails.Location = new System.Drawing.Point(16, 241);
             this.dgvBillDetails.Name = "dgvBillDetails";
             this.dgvBillDetails.RowHeadersWidth = 51;
             this.dgvBillDetails.RowTemplate.Height = 24;
@@ -208,41 +249,41 @@
             this.lblStaff.AutoSize = true;
             this.lblStaff.Location = new System.Drawing.Point(11, 213);
             this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(106, 25);
+            this.lblStaff.Size = new System.Drawing.Size(0, 25);
             this.lblStaff.TabIndex = 5;
-            this.lblStaff.Text = "Nhân viên:";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(11, 184);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(79, 25);
+            this.lblDate.Size = new System.Drawing.Size(64, 25);
             this.lblDate.TabIndex = 4;
-            this.lblDate.Text = "Ngày:...";
+            this.lblDate.Text = "Ngày:";
             // 
             // lblTable
             // 
             this.lblTable.AutoSize = true;
             this.lblTable.Location = new System.Drawing.Point(11, 155);
             this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(68, 25);
+            this.lblTable.Size = new System.Drawing.Size(53, 25);
             this.lblTable.TabIndex = 3;
-            this.lblTable.Text = "Bàn:...";
+            this.lblTable.Text = "Bàn:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 89);
+            this.label4.Location = new System.Drawing.Point(310, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
+            this.label4.Size = new System.Drawing.Size(12, 25);
             this.label4.TabIndex = 2;
-            this.label4.Text = "0968936082";
+            this.label4.Text = "\r\n";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(153, 51);
+            this.label3.Location = new System.Drawing.Point(167, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 25);
             this.label3.TabIndex = 1;
@@ -251,51 +292,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 14);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(18, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 25);
+            this.label2.Size = new System.Drawing.Size(439, 46);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Tiệm ăn vặt Tài handsome";
+            this.label2.Text = "Tiệm ăn vặt Tài Handsome";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // lblMaHD
-            // 
-            this.lblMaHD.AutoSize = true;
-            this.lblMaHD.Location = new System.Drawing.Point(11, 121);
-            this.lblMaHD.Name = "lblMaHD";
-            this.lblMaHD.Size = new System.Drawing.Size(122, 25);
-            this.lblMaHD.TabIndex = 15;
-            this.lblMaHD.Text = "Mã hóa đơn:";
-            // 
-            // lblThoiGian
-            // 
-            this.lblThoiGian.AutoSize = true;
-            this.lblThoiGian.Location = new System.Drawing.Point(310, 184);
-            this.lblThoiGian.Name = "lblThoiGian";
-            this.lblThoiGian.Size = new System.Drawing.Size(145, 25);
-            this.lblThoiGian.TabIndex = 16;
-            this.lblThoiGian.Text = "Giờ thanh toán:";
-            // 
-            // lblKhachDua
-            // 
-            this.lblKhachDua.AutoSize = true;
-            this.lblKhachDua.Location = new System.Drawing.Point(21, 430);
-            this.lblKhachDua.Name = "lblKhachDua";
-            this.lblKhachDua.Size = new System.Drawing.Size(23, 25);
-            this.lblKhachDua.TabIndex = 17;
-            this.lblKhachDua.Text = "0";
-            // 
-            // lblTienThua
-            // 
-            this.lblTienThua.AutoSize = true;
-            this.lblTienThua.Location = new System.Drawing.Point(26, 473);
-            this.lblTienThua.Name = "lblTienThua";
-            this.lblTienThua.Size = new System.Drawing.Size(23, 25);
-            this.lblTienThua.TabIndex = 18;
-            this.lblTienThua.Text = "0";
             // 
             // frmInHoaDon
             // 

@@ -82,5 +82,25 @@ namespace QuanLyTiem
         {
             LoadListCategory();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpBottomLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }   
 }

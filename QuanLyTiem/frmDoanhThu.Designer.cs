@@ -64,6 +64,7 @@
             // 
             // pnlHeader
             // 
+            this.pnlHeader.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pnlHeader.Controls.Add(this.label1);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHeader.Location = new System.Drawing.Point(3, 3);
@@ -74,10 +75,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.label1.Size = new System.Drawing.Size(125, 40);
+            this.label1.Size = new System.Drawing.Size(147, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Doanh Thu";
             // 
@@ -98,6 +100,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnReport);
             this.panel1.Controls.Add(this.btnViewBill);
@@ -115,36 +118,38 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 25);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Từ ngày:";
             // 
             // btnReport
             // 
-            this.btnReport.Location = new System.Drawing.Point(717, 28);
+            this.btnReport.BackColor = System.Drawing.Color.Red;
+            this.btnReport.Location = new System.Drawing.Point(712, 28);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(122, 65);
             this.btnReport.TabIndex = 5;
             this.btnReport.Text = "Report";
-            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnViewBill
             // 
+            this.btnViewBill.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnViewBill.Location = new System.Drawing.Point(553, 26);
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.Size = new System.Drawing.Size(138, 67);
             this.btnViewBill.TabIndex = 4;
             this.btnViewBill.Text = "Thống kê";
-            this.btnViewBill.UseVisualStyleBackColor = true;
+            this.btnViewBill.UseVisualStyleBackColor = false;
             this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
             // dtpkToDate
             // 
             this.dtpkToDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkToDate.Location = new System.Drawing.Point(278, 59);
+            this.dtpkToDate.Location = new System.Drawing.Point(286, 59);
             this.dtpkToDate.Name = "dtpkToDate";
-            this.dtpkToDate.Size = new System.Drawing.Size(221, 30);
+            this.dtpkToDate.Size = new System.Drawing.Size(221, 27);
             this.dtpkToDate.TabIndex = 3;
             // 
             // label3
@@ -152,21 +157,22 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(282, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 25);
+            this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Đến ngày:";
             // 
             // dtpkFromDate
             // 
             this.dtpkFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkFromDate.Location = new System.Drawing.Point(6, 59);
+            this.dtpkFromDate.Location = new System.Drawing.Point(26, 59);
             this.dtpkFromDate.Name = "dtpkFromDate";
-            this.dtpkFromDate.Size = new System.Drawing.Size(202, 30);
+            this.dtpkFromDate.Size = new System.Drawing.Size(218, 27);
             this.dtpkFromDate.TabIndex = 1;
             // 
             // dtgvBill
             // 
             this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBill.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvBill.Location = new System.Drawing.Point(3, 124);
@@ -182,8 +188,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(874, 492);
             this.Controls.Add(this.tlpRoot);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmDoanhThu";
