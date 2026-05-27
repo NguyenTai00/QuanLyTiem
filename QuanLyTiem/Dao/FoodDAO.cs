@@ -70,5 +70,18 @@ namespace QuanLyTiem.Dao
             return list;
         }
 
+        // Thêm 2 tham số unit và quantity vào hàm
+        public bool InsertFood(string name, int idCategory, float price, string unit, int quantity)
+        {
+            string query = string.Format("INSERT INTO Food (name, idCategory, price, unit, quantity) VALUES (N'{0}', {1}, {2}, N'{3}', {4})",
+                name, idCategory, price, unit, quantity);
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
+
+
     }
+
+
+    }
+
 }

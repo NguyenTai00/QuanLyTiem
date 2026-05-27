@@ -1,5 +1,7 @@
 ﻿using QuanLyTiem.Dao;
+using QuanLyTiem.DTO;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace QuanLyTiem
@@ -11,44 +13,49 @@ namespace QuanLyTiem
         public frmHangHoa()
         {
             InitializeComponent();
-            // dtgvTable là tên mặc định trong Designer của bạn
-            dtgvTable.DataSource = foodList;
             LoadListFood();
             AddFoodBinding();
         }
 
         void LoadListFood()
         {
+            // Lấy dữ liệu từ FoodDAO
             foodList.DataSource = FoodDAO.Instance.GetListFood();
+            dtgvTable.DataSource = foodList; 
             dtgvTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         void AddFoodBinding()
         {
-            // Xóa các liên kết cũ
-            textBox6.DataBindings.Clear();
-            textBox7.DataBindings.Clear();
-            textBox8.DataBindings.Clear();
-            textBox9.DataBindings.Clear();
-            textBox10.DataBindings.Clear();
-
-            // Liên kết TextBox với dữ liệu (Tên cột "ID", "Name"... phải đúng trong SQL)
+           
             textBox6.DataBindings.Add(new Binding("Text", foodList, "ID", true, DataSourceUpdateMode.Never));
             textBox7.DataBindings.Add(new Binding("Text", foodList, "Name", true, DataSourceUpdateMode.Never));
-            textBox8.DataBindings.Add(new Binding("Text", foodList, "Unit", true, DataSourceUpdateMode.Never));
+            
             textBox9.DataBindings.Add(new Binding("Text", foodList, "Price", true, DataSourceUpdateMode.Never));
-            textBox10.DataBindings.Add(new Binding("Text", foodList, "Quantity", true, DataSourceUpdateMode.Never));
+            
         }
 
-        // Các hàm sự kiện nút bấm
         private void button1_Click(object sender, EventArgs e) // Nút Thêm
         {
+            string name = textBox7.Text;
+            float price = (float)Convert.ToDouble(textBox9.Text);
+            int idCategory = 1; 
 
+            if (FoodDAO.Instance.InsertFood(name, idCategory, price))
+            {
+                MessageBox.Show("Thêm thành công!");
+                LoadListFood();
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e) // Nút Sửa
+        private void button3_Click(object sender, EventArgs e) 
         {
-            if (FoodDAO.Instance.UpdateFood(int.Parse(textBox6.Text), textBox7.Text, textBox8.Text, float.Parse(textBox9.Text), int.Parse(textBox10.Text)))
+            int id = Convert.ToInt32(textBox6.Text);
+            string name = textBox7.Text;
+            float price = (float)Convert.ToDouble(textBox9.Text);
+            int idCategory = 1;
+
+            if (FoodDAO.Instance.UpdateFood(id, name, idCategory, price))
             {
                 MessageBox.Show("Sửa thành công!");
                 LoadListFood();
@@ -57,7 +64,8 @@ namespace QuanLyTiem
 
         private void button2_Click(object sender, EventArgs e) // Nút Xóa
         {
-            if (FoodDAO.Instance.DeleteFood(int.Parse(textBox6.Text)))
+            int id = Convert.ToInt32(textBox6.Text);
+            if (FoodDAO.Instance.DeleteFood(id))
             {
                 MessageBox.Show("Xóa thành công!");
                 LoadListFood();
