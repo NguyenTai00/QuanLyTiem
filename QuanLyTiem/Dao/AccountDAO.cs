@@ -84,5 +84,7 @@ namespace QuanLyTiem.Dao
             int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @password , @newPassword", new object[] { userName, displayName, pass, newPass });
             return result > 0;
         }
+
+        
     }
 }

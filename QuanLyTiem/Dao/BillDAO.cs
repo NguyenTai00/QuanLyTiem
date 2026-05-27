@@ -64,5 +64,18 @@ namespace QuanLyTiem.Dao
         {
             return DataProvider.Instance.ExecuteQuery("exec USP_GetDailySummary @date", new object[] { date });
         }
+
+        // Hàm lấy danh sách hóa đơn chi tiết cho báo cáo
+        public DataTable GetSalesReport(DateTime from, DateTime to, string user)
+        {
+            // Truyền vào Từ ngày, Đến ngày và Tên tài khoản
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetSalesReport @fromDate , @toDate , @userName", new object[] { from, to, user });
+        }
+
+        // Hàm lấy các con số tổng hợp (Tổng tiền, tổng đơn...)
+        public DataTable GetSalesSummary(DateTime from, DateTime to, string user)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetSalesSummaryReport @fromDate , @toDate , @userName", new object[] { from, to, user });
+        }
     }
 }

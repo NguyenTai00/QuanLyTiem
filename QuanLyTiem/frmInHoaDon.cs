@@ -90,5 +90,35 @@ namespace QuanLyTiem
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStaff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalPrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlBill_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

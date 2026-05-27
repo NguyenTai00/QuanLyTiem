@@ -32,6 +32,7 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
+            this.lblPaymentMethod = new System.Windows.Forms.Label();
             this.lblMaHD = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,11 +44,9 @@
             this.lblStaff = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTable = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.lblPaymentMethod = new System.Windows.Forms.Label();
             this.tlpRoot.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlBill.SuspendLayout();
@@ -71,6 +70,7 @@
             // 
             // pnlHeader
             // 
+            this.pnlHeader.BackColor = System.Drawing.Color.SeaShell;
             this.pnlHeader.Controls.Add(this.label1);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHeader.Location = new System.Drawing.Point(3, 3);
@@ -81,14 +81,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(125, 24);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(93, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 25);
+            this.label1.Size = new System.Drawing.Size(294, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa Đơn Thanh Toán";
             // 
             // pnlBill
             // 
+            this.pnlBill.BackColor = System.Drawing.Color.White;
             this.pnlBill.Controls.Add(this.lblPaymentMethod);
             this.pnlBill.Controls.Add(this.lblMaHD);
             this.pnlBill.Controls.Add(this.label7);
@@ -101,7 +103,6 @@
             this.pnlBill.Controls.Add(this.lblStaff);
             this.pnlBill.Controls.Add(this.lblDate);
             this.pnlBill.Controls.Add(this.lblTable);
-            this.pnlBill.Controls.Add(this.label4);
             this.pnlBill.Controls.Add(this.label3);
             this.pnlBill.Controls.Add(this.label2);
             this.pnlBill.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -109,11 +110,21 @@
             this.pnlBill.Name = "pnlBill";
             this.pnlBill.Size = new System.Drawing.Size(469, 667);
             this.pnlBill.TabIndex = 1;
+            this.pnlBill.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBill_Paint);
+            // 
+            // lblPaymentMethod
+            // 
+            this.lblPaymentMethod.AutoSize = true;
+            this.lblPaymentMethod.Location = new System.Drawing.Point(17, 448);
+            this.lblPaymentMethod.Name = "lblPaymentMethod";
+            this.lblPaymentMethod.Size = new System.Drawing.Size(100, 25);
+            this.lblPaymentMethod.TabIndex = 17;
+            this.lblPaymentMethod.Text = "Hình thức:";
             // 
             // lblMaHD
             // 
             this.lblMaHD.AutoSize = true;
-            this.lblMaHD.Location = new System.Drawing.Point(11, 121);
+            this.lblMaHD.Location = new System.Drawing.Point(9, 116);
             this.lblMaHD.Name = "lblMaHD";
             this.lblMaHD.Size = new System.Drawing.Size(122, 25);
             this.lblMaHD.TabIndex = 15;
@@ -122,7 +133,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 585);
+            this.label7.Location = new System.Drawing.Point(17, 570);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 25);
             this.label7.TabIndex = 14;
@@ -131,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 548);
+            this.label5.Location = new System.Drawing.Point(17, 513);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 25);
             this.label5.TabIndex = 12;
@@ -139,28 +150,31 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(269, 622);
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnClose.Location = new System.Drawing.Point(294, 621);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(118, 36);
+            this.btnClose.Size = new System.Drawing.Size(93, 37);
             this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "Đóng";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Text = "⏻ Đóng";
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(68, 629);
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(70, 621);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(92, 29);
+            this.btnPrint.Size = new System.Drawing.Size(92, 38);
             this.btnPrint.TabIndex = 10;
-            this.btnPrint.Text = "In";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Text = "🖨 In";
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // lblFinalPrice
             // 
             this.lblFinalPrice.AutoSize = true;
-            this.lblFinalPrice.Location = new System.Drawing.Point(167, 585);
+            this.lblFinalPrice.Location = new System.Drawing.Point(204, 570);
             this.lblFinalPrice.Name = "lblFinalPrice";
             this.lblFinalPrice.Size = new System.Drawing.Size(118, 25);
             this.lblFinalPrice.TabIndex = 9;
@@ -169,17 +183,19 @@
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(167, 548);
+            this.lblTotalPrice.Location = new System.Drawing.Point(204, 513);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(112, 25);
             this.lblTotalPrice.TabIndex = 7;
             this.lblTotalPrice.Text = "Tổng cộng:";
+            this.lblTotalPrice.Click += new System.EventHandler(this.lblTotalPrice_Click);
             // 
             // dgvBillDetails
             // 
+            this.dgvBillDetails.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dgvBillDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillDetails.Location = new System.Drawing.Point(16, 254);
+            this.dgvBillDetails.Location = new System.Drawing.Point(16, 267);
             this.dgvBillDetails.Name = "dgvBillDetails";
             this.dgvBillDetails.RowHeadersWidth = 51;
             this.dgvBillDetails.RowTemplate.Height = 24;
@@ -189,38 +205,32 @@
             // lblStaff
             // 
             this.lblStaff.AutoSize = true;
-            this.lblStaff.Location = new System.Drawing.Point(11, 213);
+            this.lblStaff.Location = new System.Drawing.Point(11, 223);
             this.lblStaff.Name = "lblStaff";
             this.lblStaff.Size = new System.Drawing.Size(106, 25);
             this.lblStaff.TabIndex = 5;
             this.lblStaff.Text = "Nhân viên:";
+            this.lblStaff.Click += new System.EventHandler(this.lblStaff_Click);
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(11, 184);
+            this.lblDate.Location = new System.Drawing.Point(11, 188);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(79, 25);
+            this.lblDate.Size = new System.Drawing.Size(64, 25);
             this.lblDate.TabIndex = 4;
-            this.lblDate.Text = "Ngày:...";
+            this.lblDate.Text = "Ngày:";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
             // lblTable
             // 
             this.lblTable.AutoSize = true;
-            this.lblTable.Location = new System.Drawing.Point(11, 155);
+            this.lblTable.Location = new System.Drawing.Point(11, 150);
             this.lblTable.Name = "lblTable";
-            this.lblTable.Size = new System.Drawing.Size(68, 25);
+            this.lblTable.Size = new System.Drawing.Size(53, 25);
             this.lblTable.TabIndex = 3;
-            this.lblTable.Text = "Bàn:...";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "0968936082";
+            this.lblTable.Text = "Bàn:";
+            this.lblTable.Click += new System.EventHandler(this.lblTable_Click);
             // 
             // label3
             // 
@@ -234,24 +244,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(151, 17);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(107, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 25);
+            this.label2.Size = new System.Drawing.Size(246, 37);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Cửa hàng đồ ăn ";
+            this.label2.Text = "Cửa Hàng Đồ Ăn";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // lblPaymentMethod
-            // 
-            this.lblPaymentMethod.AutoSize = true;
-            this.lblPaymentMethod.Location = new System.Drawing.Point(17, 456);
-            this.lblPaymentMethod.Name = "lblPaymentMethod";
-            this.lblPaymentMethod.Size = new System.Drawing.Size(100, 25);
-            this.lblPaymentMethod.TabIndex = 17;
-            this.lblPaymentMethod.Text = "Hình thức:";
             // 
             // frmInHoaDon
             // 
@@ -288,7 +291,6 @@
         private System.Windows.Forms.Label lblStaff;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblTable;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnClose;

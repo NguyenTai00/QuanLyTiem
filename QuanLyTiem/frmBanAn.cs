@@ -67,5 +67,10 @@ namespace QuanLyTiem
                 LoadListTable();
             }
         }
+
+        private void tlpRightContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

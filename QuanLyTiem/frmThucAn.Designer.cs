@@ -91,11 +91,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 25);
+            this.label1.Size = new System.Drawing.Size(208, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý thức ăn";
+            this.label1.Text = "QUẢN LÝ THỨC ĂN";
             // 
             // tlpRegion
             // 
@@ -146,27 +148,34 @@
             // 
             // btnAddFood
             // 
+            this.btnAddFood.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.btnAddFood.Location = new System.Drawing.Point(3, 3);
             this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(75, 38);
+            this.btnAddFood.Size = new System.Drawing.Size(224, 68);
             this.btnAddFood.TabIndex = 8;
-            this.btnAddFood.Text = "Thêm";
+            this.btnAddFood.Text = "➕ Thêm";
             this.btnAddFood.UseVisualStyleBackColor = true;
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // btnShowFood
             // 
+            this.btnShowFood.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnShowFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFood.ForeColor = System.Drawing.Color.Black;
             this.btnShowFood.Location = new System.Drawing.Point(233, 3);
             this.btnShowFood.Name = "btnShowFood";
-            this.btnShowFood.Size = new System.Drawing.Size(87, 38);
+            this.btnShowFood.Size = new System.Drawing.Size(224, 68);
             this.btnShowFood.TabIndex = 9;
-            this.btnShowFood.Text = "Report";
+            this.btnShowFood.Text = "📋 Report";
             this.btnShowFood.UseVisualStyleBackColor = true;
             this.btnShowFood.Click += new System.EventHandler(this.btnShowFood_Click);
             // 
             // dtgvFood
             // 
             this.dtgvFood.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvFood.BackgroundColor = System.Drawing.Color.White;
             this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvFood.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvFood.Location = new System.Drawing.Point(3, 3);
@@ -216,9 +225,11 @@
             // 
             // btnSearchFood
             // 
+            this.btnSearchFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
             this.btnSearchFood.Location = new System.Drawing.Point(315, 3);
             this.btnSearchFood.Name = "btnSearchFood";
-            this.btnSearchFood.Size = new System.Drawing.Size(105, 48);
+            this.btnSearchFood.Size = new System.Drawing.Size(142, 48);
             this.btnSearchFood.TabIndex = 1;
             this.btnSearchFood.Text = "Tìm kiếm";
             this.btnSearchFood.UseVisualStyleBackColor = true;
@@ -244,21 +255,25 @@
             // 
             // btnDeleteFood
             // 
+            this.btnDeleteFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btnDeleteFood.Location = new System.Drawing.Point(192, 233);
             this.btnDeleteFood.Name = "btnDeleteFood";
-            this.btnDeleteFood.Size = new System.Drawing.Size(75, 41);
+            this.btnDeleteFood.Size = new System.Drawing.Size(104, 41);
             this.btnDeleteFood.TabIndex = 7;
-            this.btnDeleteFood.Text = "Xóa";
+            this.btnDeleteFood.Text = "🗑️ Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
             this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnEditFood
             // 
+            this.btnEditFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
             this.btnEditFood.Location = new System.Drawing.Point(58, 233);
             this.btnEditFood.Name = "btnEditFood";
-            this.btnEditFood.Size = new System.Drawing.Size(75, 41);
+            this.btnEditFood.Size = new System.Drawing.Size(96, 41);
             this.btnEditFood.TabIndex = 6;
-            this.btnEditFood.Text = "Sửa ";
+            this.btnEditFood.Text = "📝  Sửa ";
             this.btnEditFood.UseVisualStyleBackColor = true;
             this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
             // 
@@ -286,6 +301,7 @@
             // 
             // txtFoodID
             // 
+            this.txtFoodID.BackColor = System.Drawing.Color.White;
             this.txtFoodID.Location = new System.Drawing.Point(146, 17);
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.ReadOnly = true;
@@ -332,6 +348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(950, 606);
             this.Controls.Add(this.tlpRoot);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

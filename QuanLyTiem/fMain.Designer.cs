@@ -212,6 +212,7 @@
             this.báoCáoBánHàngToolStripMenuItem.Name = "báoCáoBánHàngToolStripMenuItem";
             this.báoCáoBánHàngToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.báoCáoBánHàngToolStripMenuItem.Text = "Báo cáo bán hàng";
+            this.báoCáoBánHàngToolStripMenuItem.Click += new System.EventHandler(this.báoCáoBánHàngToolStripMenuItem_Click);
             // 
             // doanhThuToolStripMenuItem1
             // 

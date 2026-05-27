@@ -43,9 +43,9 @@
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.txtNewPass = new System.Windows.Forms.TextBox();
             this.txtReEnterPass = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.ckbShowPass = new System.Windows.Forms.CheckBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlContent.SuspendLayout();
@@ -79,11 +79,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 25);
+            this.label1.Size = new System.Drawing.Size(233, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thông tin cá nhân";
+            this.label1.Text = "THÔNG TIN CÁ NHÂN";
             // 
             // pnlContent
             // 
@@ -99,7 +100,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.60942F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.39058F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 143F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
@@ -110,9 +111,9 @@
             this.tableLayoutPanel2.Controls.Add(this.txtPassWord, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtNewPass, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.txtReEnterPass, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.btnUpdate, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.btnExit, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.ckbShowPass, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnUpdate, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -173,74 +174,68 @@
             // 
             // txtUserName
             // 
+            this.txtUserName.BackColor = System.Drawing.Color.White;
             this.txtUserName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtUserName.Location = new System.Drawing.Point(238, 3);
+            this.txtUserName.Location = new System.Drawing.Point(237, 3);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(528, 30);
+            this.txtUserName.Size = new System.Drawing.Size(524, 30);
             this.txtUserName.TabIndex = 5;
             this.txtUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtDisplayName
             // 
             this.txtDisplayName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDisplayName.Location = new System.Drawing.Point(238, 84);
+            this.txtDisplayName.Location = new System.Drawing.Point(237, 84);
             this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Size = new System.Drawing.Size(528, 30);
+            this.txtDisplayName.Size = new System.Drawing.Size(524, 30);
             this.txtDisplayName.TabIndex = 6;
             // 
             // txtPassWord
             // 
             this.txtPassWord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPassWord.Location = new System.Drawing.Point(238, 165);
+            this.txtPassWord.Location = new System.Drawing.Point(237, 165);
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(528, 30);
+            this.txtPassWord.Size = new System.Drawing.Size(524, 30);
             this.txtPassWord.TabIndex = 7;
             this.txtPassWord.UseSystemPasswordChar = true;
             // 
             // txtNewPass
             // 
             this.txtNewPass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNewPass.Location = new System.Drawing.Point(238, 246);
+            this.txtNewPass.Location = new System.Drawing.Point(237, 246);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(528, 30);
+            this.txtNewPass.Size = new System.Drawing.Size(524, 30);
             this.txtNewPass.TabIndex = 8;
             this.txtNewPass.UseSystemPasswordChar = true;
             // 
             // txtReEnterPass
             // 
             this.txtReEnterPass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtReEnterPass.Location = new System.Drawing.Point(238, 327);
+            this.txtReEnterPass.Location = new System.Drawing.Point(237, 327);
             this.txtReEnterPass.Name = "txtReEnterPass";
-            this.txtReEnterPass.Size = new System.Drawing.Size(528, 30);
+            this.txtReEnterPass.Size = new System.Drawing.Size(524, 30);
             this.txtReEnterPass.TabIndex = 9;
             this.txtReEnterPass.UseSystemPasswordChar = true;
             this.txtReEnterPass.TextChanged += new System.EventHandler(this.txtReEnterPass_TextChanged);
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(3, 408);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(120, 57);
-            this.btnUpdate.TabIndex = 10;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(238, 408);
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
+            this.btnExit.Location = new System.Drawing.Point(237, 408);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(92, 57);
+            this.btnExit.Size = new System.Drawing.Size(524, 101);
             this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "Thoát";
+            this.btnExit.Text = "🏃 Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // ckbShowPass
             // 
             this.ckbShowPass.AutoSize = true;
-            this.ckbShowPass.Location = new System.Drawing.Point(772, 165);
+            this.ckbShowPass.Location = new System.Drawing.Point(767, 165);
             this.ckbShowPass.Name = "ckbShowPass";
             this.ckbShowPass.Size = new System.Drawing.Size(99, 29);
             this.ckbShowPass.TabIndex = 12;
@@ -248,10 +243,24 @@
             this.ckbShowPass.UseVisualStyleBackColor = true;
             this.ckbShowPass.CheckedChanged += new System.EventHandler(this.ckbShowPass_CheckedChanged);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnUpdate.Location = new System.Drawing.Point(3, 408);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(228, 101);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Text = "🆙 Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmThongTinTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(919, 598);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

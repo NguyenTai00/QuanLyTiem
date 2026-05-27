@@ -182,7 +182,7 @@
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(166, 66);
             this.btnCheckOut.TabIndex = 6;
-            this.btnCheckOut.Text = "Thanh toán";
+            this.btnCheckOut.Text = " 💳 Thanh toán";
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
@@ -231,29 +231,32 @@
             // 
             // cboCategory
             // 
+            this.cboCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboCategory.FormattingEnabled = true;
             this.cboCategory.Location = new System.Drawing.Point(3, 3);
             this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(257, 33);
+            this.cboCategory.Size = new System.Drawing.Size(327, 33);
             this.cboCategory.TabIndex = 0;
             this.cboCategory.SelectedIndexChanged += new System.EventHandler(this.cboCategory_SelectedIndexChanged);
             // 
             // cboFood
             // 
+            this.cboFood.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboFood.FormattingEnabled = true;
             this.cboFood.Location = new System.Drawing.Point(3, 83);
             this.cboFood.Name = "cboFood";
-            this.cboFood.Size = new System.Drawing.Size(257, 33);
+            this.cboFood.Size = new System.Drawing.Size(327, 33);
             this.cboFood.TabIndex = 1;
             // 
             // btnAddFood
             // 
+            this.btnAddFood.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddFood.ForeColor = System.Drawing.Color.Blue;
             this.btnAddFood.Location = new System.Drawing.Point(336, 83);
             this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(125, 33);
+            this.btnAddFood.Size = new System.Drawing.Size(157, 45);
             this.btnAddFood.TabIndex = 3;
-            this.btnAddFood.Text = "Thêm";
+            this.btnAddFood.Text = "➕  Thêm";
             this.btnAddFood.UseVisualStyleBackColor = true;
             this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
@@ -267,14 +270,15 @@
             // 
             // nmFoodCount
             // 
-            this.nmFoodCount.Location = new System.Drawing.Point(5, 3);
+            this.nmFoodCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nmFoodCount.Location = new System.Drawing.Point(0, 0);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.nmFoodCount.Name = "nmFoodCount";
-            this.nmFoodCount.Size = new System.Drawing.Size(120, 30);
+            this.nmFoodCount.Size = new System.Drawing.Size(153, 30);
             this.nmFoodCount.TabIndex = 2;
             // 
             // dgvBillInfo

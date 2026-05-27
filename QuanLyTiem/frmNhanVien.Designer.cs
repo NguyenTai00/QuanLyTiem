@@ -103,6 +103,8 @@
             // 
             this.pnlTitle.Controls.Add(this.label1);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlTitle.ForeColor = System.Drawing.Color.Black;
             this.pnlTitle.Location = new System.Drawing.Point(3, 3);
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(986, 74);
@@ -113,9 +115,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.Size = new System.Drawing.Size(228, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý nhân viên";
+            this.label1.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
             // tlpContent
             // 
@@ -335,6 +337,7 @@
             // 
             // dtpNgaySinh
             // 
+            this.dtpNgaySinh.CustomFormat = "dd/mm/yyyy";
             this.dtpNgaySinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinh.Location = new System.Drawing.Point(178, 45);
@@ -344,6 +347,7 @@
             // 
             // dtpNgayVaoLam
             // 
+            this.dtpNgayVaoLam.CustomFormat = "dd/mm/yyyy";
             this.dtpNgayVaoLam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayVaoLam.Location = new System.Drawing.Point(178, 255);
@@ -375,66 +379,78 @@
             // btnThemMoi
             // 
             this.btnThemMoi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
             this.btnThemMoi.Location = new System.Drawing.Point(3, 3);
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.Size = new System.Drawing.Size(134, 31);
             this.btnThemMoi.TabIndex = 12;
-            this.btnThemMoi.Text = "Thêm mới";
+            this.btnThemMoi.Text = "➕ Thêm";
             this.btnThemMoi.UseVisualStyleBackColor = true;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // btnSua
             // 
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.btnSua.Location = new System.Drawing.Point(143, 3);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(134, 31);
             this.btnSua.TabIndex = 13;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.Text = "📝 Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btnXoa.Location = new System.Drawing.Point(283, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(139, 31);
             this.btnXoa.TabIndex = 14;
-            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Text = "🗑️ Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHuyGhi
             // 
             this.btnHuyGhi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHuyGhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyGhi.ForeColor = System.Drawing.Color.DimGray;
             this.btnHuyGhi.Location = new System.Drawing.Point(3, 40);
             this.btnHuyGhi.Name = "btnHuyGhi";
             this.btnHuyGhi.Size = new System.Drawing.Size(134, 31);
             this.btnHuyGhi.TabIndex = 15;
-            this.btnHuyGhi.Text = "Hủy";
+            this.btnHuyGhi.Text = "🚫 Hủy";
             this.btnHuyGhi.UseVisualStyleBackColor = true;
             this.btnHuyGhi.Click += new System.EventHandler(this.btnHuyGhi_Click);
             // 
             // btnGhi
             // 
             this.btnGhi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGhi.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnGhi.Location = new System.Drawing.Point(143, 40);
             this.btnGhi.Name = "btnGhi";
             this.btnGhi.Size = new System.Drawing.Size(134, 31);
             this.btnGhi.TabIndex = 15;
-            this.btnGhi.Text = "Ghi";
+            this.btnGhi.Text = "💾 Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
             this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // btnKetThuc
             // 
             this.btnKetThuc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKetThuc.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.btnKetThuc.Location = new System.Drawing.Point(283, 40);
             this.btnKetThuc.Name = "btnKetThuc";
             this.btnKetThuc.Size = new System.Drawing.Size(139, 31);
             this.btnKetThuc.TabIndex = 16;
-            this.btnKetThuc.Text = "Kết thúc";
+            this.btnKetThuc.Text = "🔚 Kết thúc";
             this.btnKetThuc.UseVisualStyleBackColor = true;
             // 
             // tlpRightcontent
@@ -550,6 +566,7 @@
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.Location = new System.Drawing.Point(3, 111);
@@ -565,6 +582,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(992, 639);
             this.Controls.Add(this.tlpRoot);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

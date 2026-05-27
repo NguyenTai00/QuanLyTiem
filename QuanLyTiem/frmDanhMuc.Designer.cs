@@ -85,12 +85,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.label1.Size = new System.Drawing.Size(186, 40);
+            this.label1.Size = new System.Drawing.Size(309, 53);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý danh mục";
+            this.label1.Text = "QUẢN LÝ DANH MỤC";
             // 
             // tlpContent
             // 
@@ -125,6 +126,7 @@
             // 
             // dtgvCategory
             // 
+            this.dtgvCategory.BackgroundColor = System.Drawing.Color.White;
             this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvCategory.Location = new System.Drawing.Point(3, 3);
@@ -152,22 +154,24 @@
             // 
             // btnAddCategory
             // 
+            this.btnAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAddCategory.Location = new System.Drawing.Point(3, 3);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(110, 42);
+            this.btnAddCategory.Size = new System.Drawing.Size(186, 42);
             this.btnAddCategory.TabIndex = 1;
-            this.btnAddCategory.Text = "Thêm";
-            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Text = "➕ Thêm";
+            this.btnAddCategory.UseVisualStyleBackColor = false;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // btnShowCategory
             // 
+            this.btnShowCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnShowCategory.Location = new System.Drawing.Point(195, 3);
             this.btnShowCategory.Name = "btnShowCategory";
-            this.btnShowCategory.Size = new System.Drawing.Size(107, 42);
+            this.btnShowCategory.Size = new System.Drawing.Size(186, 42);
             this.btnShowCategory.TabIndex = 2;
-            this.btnShowCategory.Text = "Xem";
-            this.btnShowCategory.UseVisualStyleBackColor = true;
+            this.btnShowCategory.Text = "👁 Xem";
+            this.btnShowCategory.UseVisualStyleBackColor = false;
             this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
             // 
             // tlpRight
@@ -203,22 +207,24 @@
             // 
             // btnEditCategory
             // 
+            this.btnEditCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnEditCategory.Location = new System.Drawing.Point(3, 3);
             this.btnEditCategory.Name = "btnEditCategory";
-            this.btnEditCategory.Size = new System.Drawing.Size(100, 39);
+            this.btnEditCategory.Size = new System.Drawing.Size(186, 39);
             this.btnEditCategory.TabIndex = 0;
-            this.btnEditCategory.Text = "Sửa";
-            this.btnEditCategory.UseVisualStyleBackColor = true;
+            this.btnEditCategory.Text = "📝  Sửa ";
+            this.btnEditCategory.UseVisualStyleBackColor = false;
             this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // btnDeleteCategory
             // 
+            this.btnDeleteCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDeleteCategory.Location = new System.Drawing.Point(195, 3);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(89, 39);
+            this.btnDeleteCategory.Size = new System.Drawing.Size(187, 39);
             this.btnDeleteCategory.TabIndex = 1;
-            this.btnDeleteCategory.Text = "Xóa";
-            this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Text = "🗑️ Xóa";
+            this.btnDeleteCategory.UseVisualStyleBackColor = false;
             this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // tlpSearch
@@ -277,6 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(799, 516);
             this.Controls.Add(this.tlpRoot);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

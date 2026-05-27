@@ -77,6 +77,7 @@
             // 
             this.pnlTitle.Controls.Add(this.label1);
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTitle.Location = new System.Drawing.Point(3, 3);
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(848, 74);
@@ -87,9 +88,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 25);
+            this.label1.Size = new System.Drawing.Size(192, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý bàn ăn";
+            this.label1.Text = "QUẢN LÝ BÀN ĂN";
             // 
             // tlpContent
             // 
@@ -124,6 +125,7 @@
             // 
             // dtgvTable
             // 
+            this.dtgvTable.BackgroundColor = System.Drawing.Color.White;
             this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvTable.Location = new System.Drawing.Point(3, 3);
@@ -144,11 +146,14 @@
             // 
             // btnAddTable
             // 
-            this.btnAddTable.Location = new System.Drawing.Point(110, 13);
+            this.btnAddTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnAddTable.Location = new System.Drawing.Point(0, 0);
             this.btnAddTable.Name = "btnAddTable";
-            this.btnAddTable.Size = new System.Drawing.Size(102, 45);
+            this.btnAddTable.Size = new System.Drawing.Size(412, 74);
             this.btnAddTable.TabIndex = 0;
-            this.btnAddTable.Text = "Thêm";
+            this.btnAddTable.Text = "➕ Thêm";
             this.btnAddTable.UseVisualStyleBackColor = true;
             this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
@@ -166,6 +171,7 @@
             this.tlpRightContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tlpRightContent.Size = new System.Drawing.Size(418, 420);
             this.tlpRightContent.TabIndex = 1;
+            this.tlpRightContent.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpRightContent_Paint);
             // 
             // tlpRightTop
             // 
@@ -217,6 +223,7 @@
             // 
             // txtTableID
             // 
+            this.txtTableID.BackColor = System.Drawing.Color.White;
             this.txtTableID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTableID.Location = new System.Drawing.Point(119, 3);
             this.txtTableID.Name = "txtTableID";
@@ -234,6 +241,7 @@
             // 
             // txtTableStatus
             // 
+            this.txtTableStatus.BackColor = System.Drawing.Color.White;
             this.txtTableStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTableStatus.Location = new System.Drawing.Point(119, 69);
             this.txtTableStatus.Name = "txtTableStatus";
@@ -253,21 +261,25 @@
             // 
             // btnDeleteTable
             // 
+            this.btnDeleteTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btnDeleteTable.Location = new System.Drawing.Point(272, 13);
             this.btnDeleteTable.Name = "btnDeleteTable";
-            this.btnDeleteTable.Size = new System.Drawing.Size(75, 45);
+            this.btnDeleteTable.Size = new System.Drawing.Size(112, 45);
             this.btnDeleteTable.TabIndex = 1;
-            this.btnDeleteTable.Text = "Xóa";
+            this.btnDeleteTable.Text = "🗑️ Xóa";
             this.btnDeleteTable.UseVisualStyleBackColor = true;
             this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // btnEditTable
             // 
-            this.btnEditTable.Location = new System.Drawing.Point(68, 13);
+            this.btnEditTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
+            this.btnEditTable.Location = new System.Drawing.Point(70, 13);
             this.btnEditTable.Name = "btnEditTable";
-            this.btnEditTable.Size = new System.Drawing.Size(75, 45);
+            this.btnEditTable.Size = new System.Drawing.Size(102, 45);
             this.btnEditTable.TabIndex = 0;
-            this.btnEditTable.Text = "Sửa ";
+            this.btnEditTable.Text = "📝 Sửa";
             this.btnEditTable.UseVisualStyleBackColor = true;
             this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
             // 
@@ -275,6 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(854, 512);
             this.Controls.Add(this.tlpRoot);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

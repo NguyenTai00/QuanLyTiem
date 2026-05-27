@@ -69,7 +69,7 @@
             this.tlpRoot.RowCount = 2;
             this.tlpRoot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tlpRoot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpRoot.Size = new System.Drawing.Size(672, 418);
+            this.tlpRoot.Size = new System.Drawing.Size(906, 531);
             this.tlpRoot.TabIndex = 0;
             // 
             // pnlHeader
@@ -78,17 +78,18 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlHeader.Location = new System.Drawing.Point(3, 3);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(666, 74);
+            this.pnlHeader.Size = new System.Drawing.Size(900, 74);
             this.pnlHeader.TabIndex = 0;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(28, 26);
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(20, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(172, 25);
+            this.lblTitle.Size = new System.Drawing.Size(230, 25);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Quản lý Tài khoản";
+            this.lblTitle.Text = "QUẢN LÝ TÀI KHOẢN";
             // 
             // tlpContent
             // 
@@ -103,7 +104,7 @@
             this.tlpContent.RowCount = 1;
             this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpContent.Size = new System.Drawing.Size(666, 332);
+            this.tlpContent.Size = new System.Drawing.Size(900, 445);
             this.tlpContent.TabIndex = 1;
             // 
             // tlpLeft
@@ -118,19 +119,20 @@
             this.tlpLeft.RowCount = 2;
             this.tlpLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tlpLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpLeft.Size = new System.Drawing.Size(327, 326);
+            this.tlpLeft.Size = new System.Drawing.Size(444, 439);
             this.tlpLeft.TabIndex = 0;
             // 
             // dtgvAccount
             // 
             this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvAccount.BackgroundColor = System.Drawing.Color.White;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvAccount.Location = new System.Drawing.Point(3, 3);
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.RowTemplate.Height = 24;
-            this.dtgvAccount.Size = new System.Drawing.Size(321, 254);
+            this.dtgvAccount.Size = new System.Drawing.Size(438, 345);
             this.dtgvAccount.TabIndex = 0;
             this.dtgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAccount_CellClick);
             // 
@@ -140,44 +142,53 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutPanel1.Controls.Add(this.btnAddAccount, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDeleteAccount, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEditAccount, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAddAccount, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 263);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 354);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(321, 60);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(438, 82);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnAddAccount
             // 
+            this.btnAddAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
             this.btnAddAccount.Location = new System.Drawing.Point(3, 3);
             this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(99, 54);
+            this.btnAddAccount.Size = new System.Drawing.Size(138, 76);
             this.btnAddAccount.TabIndex = 4;
-            this.btnAddAccount.Text = "Thêm";
+            this.btnAddAccount.Text = "➕ Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // btnDeleteAccount
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(108, 3);
+            this.btnDeleteAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btnDeleteAccount.Location = new System.Drawing.Point(147, 3);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(99, 54);
+            this.btnDeleteAccount.Size = new System.Drawing.Size(138, 76);
             this.btnDeleteAccount.TabIndex = 5;
-            this.btnDeleteAccount.Text = "Xóa";
+            this.btnDeleteAccount.Text = "🗑️ Xóa";
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Location = new System.Drawing.Point(213, 3);
+            this.btnEditAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.btnEditAccount.Location = new System.Drawing.Point(291, 3);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(105, 54);
+            this.btnEditAccount.Size = new System.Drawing.Size(144, 76);
             this.btnEditAccount.TabIndex = 6;
-            this.btnEditAccount.Text = "Sửa";
+            this.btnEditAccount.Text = "📝 Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = true;
             this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
@@ -192,28 +203,31 @@
             this.pnlContent.Controls.Add(this.label2);
             this.pnlContent.Controls.Add(this.label1);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(336, 3);
+            this.pnlContent.Location = new System.Drawing.Point(453, 3);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(327, 326);
+            this.pnlContent.Size = new System.Drawing.Size(444, 439);
             this.pnlContent.TabIndex = 1;
             // 
             // btnRefresh
             // 
+            this.btnRefresh.ForeColor = System.Drawing.Color.Brown;
             this.btnRefresh.Location = new System.Drawing.Point(205, 274);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(103, 39);
+            this.btnRefresh.Size = new System.Drawing.Size(144, 39);
             this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.Text = "🔄  Làm mới";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnResetPassword
             // 
+            this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnResetPassword.Location = new System.Drawing.Point(11, 274);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(170, 39);
             this.btnResetPassword.TabIndex = 7;
-            this.btnResetPassword.Text = "Đặt lại mật khẩu";
+            this.btnResetPassword.Text = "  Đặt lại mật khẩu";
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
@@ -269,7 +283,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(672, 418);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(906, 531);
             this.Controls.Add(this.tlpRoot);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
