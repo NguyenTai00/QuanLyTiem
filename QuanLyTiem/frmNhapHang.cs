@@ -127,40 +127,60 @@ namespace QuanLyTiem
 
         private void btnThemMon_Click(object sender, EventArgs e)
         {
-            DieuKhienNhapLieu(true); // Mở khóa các ô
-            XoaTrangO();            // Xóa trắng dữ liệu cũ
-            cboNhaCungCap.Focus();  // Đưa con trỏ vào ô đầu tiên
+            cheDo = 1; // QUAN TRỌNG: Thiết lập chế độ Thêm mới
+            DieuKhienNhapLieu(true); // Mở khóa các ô nhập
+            XoaTrangO(); // Xóa sạch dữ liệu cũ trong ô
+            cboNhaCungCap.Focus();
         }
 
       
         private void btnGhiPhieu_Click(object sender, EventArgs e)
         {
+            if (cboNhaCungCap.SelectedValue == null || cboNguyenLieu.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
+                return;
+            }
+
             try
             {
-                // 1. Lấy mã số từ ComboBox
+                // 1. Lấy dữ liệu chung
                 int idNCC = Convert.ToInt32(cboNhaCungCap.SelectedValue);
                 int idNL = Convert.ToInt32(cboNguyenLieu.SelectedValue);
                 float sl = (float)nmSoLuong.Value;
-
-                // Lấy giá và lọc bỏ ký tự lạ
                 string giaText = System.Text.RegularExpressions.Regex.Replace(txtGiaNhap.Text, @"[^0-9]", "");
                 float gia = float.Parse(giaText);
 
-                // 2. Gọi DAO thực hiện lưu (Dùng ID thực của nhân viên)
-                int idPhieuMoi = PhieuNhapDAO.Instance.InsertPhieuNhap(idNCC, loginAccount.IDNhanVien);
+                // 2. Kiểm tra chế độ
+                if (cheDo == 1) // --- CHẾ ĐỘ THÊM MỚI ---
+                {
+                    // Bước A: Tạo phiếu mới
+                    int idPhieuMoi = PhieuNhapDAO.Instance.InsertPhieuNhap(idNCC, loginAccount.IDNhanVien);
+                    // Bước B: Lưu chi tiết
+                    PhieuNhapDAO.Instance.InsertChiTiet(idPhieuMoi, idNL, sl, gia);
+                    // Bước C: Cập nhật tổng tiền phiếu
+                    PhieuNhapDAO.Instance.CapNhatTongTien(idPhieuMoi, sl * gia);
+                    // Bước D: Cộng kho
+                    NguyenLieuDAO.Instance.CongKho(idNL, sl);
 
-                PhieuNhapDAO.Instance.InsertChiTiet(idPhieuMoi, idNL, sl, gia);
+                    MessageBox.Show("Đã thêm phiếu nhập mới thành công!");
+                }
+                else if (cheDo == 2) // --- CHẾ ĐỘ SỬA ---
+                {
+                    if (dgvChiTietNhap.CurrentRow != null)
+                    {
+                        int idPhieu = (int)dgvChiTietNhap.CurrentRow.Cells["Mã Phiếu"].Value;
+                        // Hàm UpdateChiTiet này đã bao gồm: Sửa kho, Sửa tiền, Sửa chi tiết (như Bước 1 SQL tôi đã đưa)
+                        PhieuNhapDAO.Instance.UpdateChiTiet(idPhieu, idNL, sl, gia);
 
-                PhieuNhapDAO.Instance.CapNhatTongTien(idPhieuMoi, sl * gia);
+                        MessageBox.Show("Đã cập nhật phiếu thành công!");
+                    }
+                }
 
-                // 3. Cập nhật kho
-                NguyenLieuDAO.Instance.CongKho(idNL, sl);
-
-                MessageBox.Show("Ghi thành công phiếu số: " + idPhieuMoi);
-
-                // 4. HIỂN THỊ LẠI BẢNG (Để không bị trống)
-                LoadLichSu();
-                DieuKhienNhapLieu(false);
+                // 3. Sau khi Ghi xong (Dù Thêm hay Sửa)
+                LoadLichSu(); // Tải lại bảng để thấy dữ liệu mới nhất
+                DieuKhienNhapLieu(false); // Khóa các ô lại
+                cheDo = 0; // Reset về trạng thái chờ
             }
             catch (Exception ex)
             {
@@ -189,7 +209,18 @@ namespace QuanLyTiem
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (dgvChiTietNhap.CurrentRow == null) return;
 
+            cheDo = 2; // QUAN TRỌNG: Thiết lập chế độ Sửa
+            DieuKhienNhapLieu(true); // Mở khóa các ô
+            cboNguyenLieu.Enabled = false; // Thường không cho sửa nguyên liệu, chỉ cho sửa SL và Giá
+
+            // Đưa dữ liệu lên ô nhập
+            DataGridViewRow row = dgvChiTietNhap.CurrentRow;
+            cboNhaCungCap.Text = row.Cells["Nhà Cung Cấp"].Value.ToString();
+            cboNguyenLieu.Text = row.Cells["Tên Nguyên Liệu"].Value.ToString();
+            nmSoLuong.Value = Convert.ToDecimal(row.Cells["SL"].Value);
+            txtGiaNhap.Text = row.Cells["Đơn Giá"].Value.ToString();
         }
     }
 }
