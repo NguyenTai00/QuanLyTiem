@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtTongSL = new System.Windows.Forms.TextBox();
+            this.txtTongGiaTri = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,18 +38,18 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tlpGrb1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.cboLoaiNL = new System.Windows.Forms.ComboBox();
+            this.rdoGiamDan = new System.Windows.Forms.RadioButton();
+            this.rdoTangDan = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tlpLeftTop = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnInExcel = new System.Windows.Forms.Button();
+            this.btnKetThuc = new System.Windows.Forms.Button();
             this.tlp0Button = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLeft = new System.Windows.Forms.TableLayoutPanel();
             this.tblContent = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTonKho = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlH = new System.Windows.Forms.Panel();
             this.tlpRoot = new System.Windows.Forms.TableLayoutPanel();
@@ -61,28 +61,28 @@
             this.tlp0Button.SuspendLayout();
             this.tlpLeft.SuspendLayout();
             this.tblContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho)).BeginInit();
             this.pnlH.SuspendLayout();
             this.tlpRoot.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtTongSL
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(154, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 30);
-            this.textBox1.TabIndex = 4;
+            this.txtTongSL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTongSL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongSL.Location = new System.Drawing.Point(154, 3);
+            this.txtTongSL.Name = "txtTongSL";
+            this.txtTongSL.Size = new System.Drawing.Size(207, 30);
+            this.txtTongSL.TabIndex = 4;
             // 
-            // textBox2
+            // txtTongGiaTri
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(154, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 30);
-            this.textBox2.TabIndex = 5;
+            this.txtTongGiaTri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTongGiaTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongGiaTri.Location = new System.Drawing.Point(154, 93);
+            this.txtTongGiaTri.Name = "txtTongGiaTri";
+            this.txtTongGiaTri.Size = new System.Drawing.Size(207, 30);
+            this.txtTongGiaTri.TabIndex = 5;
             // 
             // label5
             // 
@@ -135,8 +135,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.38323F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtTongSL, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtTongGiaTri, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -168,9 +168,9 @@
             this.tlpGrb1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.91617F));
             this.tlpGrb1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.08383F));
             this.tlpGrb1.Controls.Add(this.label2, 0, 0);
-            this.tlpGrb1.Controls.Add(this.comboBox1, 1, 0);
-            this.tlpGrb1.Controls.Add(this.radioButton1, 1, 1);
-            this.tlpGrb1.Controls.Add(this.radioButton2, 1, 2);
+            this.tlpGrb1.Controls.Add(this.cboLoaiNL, 1, 0);
+            this.tlpGrb1.Controls.Add(this.rdoGiamDan, 1, 1);
+            this.tlpGrb1.Controls.Add(this.rdoTangDan, 1, 2);
             this.tlpGrb1.Controls.Add(this.label4, 0, 1);
             this.tlpGrb1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpGrb1.Location = new System.Drawing.Point(3, 26);
@@ -183,40 +183,40 @@
             this.tlpGrb1.TabIndex = 0;
             this.tlpGrb1.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpGrb1_Paint);
             // 
-            // comboBox1
+            // cboLoaiNL
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 33);
-            this.comboBox1.TabIndex = 3;
+            this.cboLoaiNL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboLoaiNL.FormattingEnabled = true;
+            this.cboLoaiNL.Location = new System.Drawing.Point(155, 3);
+            this.cboLoaiNL.Name = "cboLoaiNL";
+            this.cboLoaiNL.Size = new System.Drawing.Size(206, 33);
+            this.cboLoaiNL.TabIndex = 3;
             // 
-            // radioButton1
+            // rdoGiamDan
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.Black;
-            this.radioButton1.Location = new System.Drawing.Point(155, 62);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(113, 29);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "giảm dần";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoGiamDan.AutoSize = true;
+            this.rdoGiamDan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoGiamDan.ForeColor = System.Drawing.Color.Black;
+            this.rdoGiamDan.Location = new System.Drawing.Point(155, 62);
+            this.rdoGiamDan.Name = "rdoGiamDan";
+            this.rdoGiamDan.Size = new System.Drawing.Size(113, 29);
+            this.rdoGiamDan.TabIndex = 4;
+            this.rdoGiamDan.TabStop = true;
+            this.rdoGiamDan.Text = "giảm dần";
+            this.rdoGiamDan.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoTangDan
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.Black;
-            this.radioButton2.Location = new System.Drawing.Point(155, 121);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(117, 29);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Tăng dần";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoTangDan.AutoSize = true;
+            this.rdoTangDan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoTangDan.ForeColor = System.Drawing.Color.Black;
+            this.rdoTangDan.Location = new System.Drawing.Point(155, 121);
+            this.rdoTangDan.Name = "rdoTangDan";
+            this.rdoTangDan.Size = new System.Drawing.Size(117, 29);
+            this.rdoTangDan.TabIndex = 5;
+            this.rdoTangDan.TabStop = true;
+            this.rdoTangDan.Text = "Tăng dần";
+            this.rdoTangDan.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -258,28 +258,30 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "👁 Xem";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnInExcel
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
-            this.button2.Location = new System.Drawing.Point(127, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 68);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "🖨 In";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnInExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
+            this.btnInExcel.Location = new System.Drawing.Point(127, 3);
+            this.btnInExcel.Name = "btnInExcel";
+            this.btnInExcel.Size = new System.Drawing.Size(118, 68);
+            this.btnInExcel.TabIndex = 1;
+            this.btnInExcel.Text = "🖨 In";
+            this.btnInExcel.UseVisualStyleBackColor = true;
+            this.btnInExcel.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnKetThuc
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.button3.Location = new System.Drawing.Point(251, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 68);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "⏻ kết thúc";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnKetThuc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKetThuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btnKetThuc.Location = new System.Drawing.Point(251, 3);
+            this.btnKetThuc.Name = "btnKetThuc";
+            this.btnKetThuc.Size = new System.Drawing.Size(122, 68);
+            this.btnKetThuc.TabIndex = 2;
+            this.btnKetThuc.Text = "⏻ kết thúc";
+            this.btnKetThuc.UseVisualStyleBackColor = true;
             // 
             // tlp0Button
             // 
@@ -288,8 +290,8 @@
             this.tlp0Button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tlp0Button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tlp0Button.Controls.Add(this.button1, 0, 0);
-            this.tlp0Button.Controls.Add(this.button2, 1, 0);
-            this.tlp0Button.Controls.Add(this.button3, 2, 0);
+            this.tlp0Button.Controls.Add(this.btnInExcel, 1, 0);
+            this.tlp0Button.Controls.Add(this.btnKetThuc, 2, 0);
             this.tlp0Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp0Button.Location = new System.Drawing.Point(3, 439);
             this.tlp0Button.Name = "tlp0Button";
@@ -319,7 +321,7 @@
             this.tblContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tblContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tblContent.Controls.Add(this.tlpLeft, 0, 0);
-            this.tblContent.Controls.Add(this.dataGridView1, 1, 0);
+            this.tblContent.Controls.Add(this.dgvTonKho, 1, 0);
             this.tblContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblContent.Location = new System.Drawing.Point(3, 83);
             this.tblContent.Name = "tblContent";
@@ -328,26 +330,26 @@
             this.tblContent.Size = new System.Drawing.Size(972, 522);
             this.tblContent.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvTonKho
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(391, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(578, 516);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvTonKho.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTonKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTonKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTonKho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTonKho.EnableHeadersVisualStyles = false;
+            this.dgvTonKho.Location = new System.Drawing.Point(391, 3);
+            this.dgvTonKho.Name = "dgvTonKho";
+            this.dgvTonKho.RowHeadersWidth = 51;
+            this.dgvTonKho.RowTemplate.Height = 24;
+            this.dgvTonKho.Size = new System.Drawing.Size(578, 516);
+            this.dgvTonKho.TabIndex = 1;
             // 
             // label1
             // 
@@ -408,7 +410,7 @@
             this.tlp0Button.ResumeLayout(false);
             this.tlpLeft.ResumeLayout(false);
             this.tblContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTonKho)).EndInit();
             this.pnlH.ResumeLayout(false);
             this.pnlH.PerformLayout();
             this.tlpRoot.ResumeLayout(false);
@@ -418,8 +420,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTongSL;
+        private System.Windows.Forms.TextBox txtTongGiaTri;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
@@ -427,18 +429,18 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tlpGrb1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ComboBox cboLoaiNL;
+        private System.Windows.Forms.RadioButton rdoGiamDan;
+        private System.Windows.Forms.RadioButton rdoTangDan;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tlpLeftTop;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnInExcel;
+        private System.Windows.Forms.Button btnKetThuc;
         private System.Windows.Forms.TableLayoutPanel tlp0Button;
         private System.Windows.Forms.TableLayoutPanel tlpLeft;
         private System.Windows.Forms.TableLayoutPanel tblContent;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTonKho;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlH;
         private System.Windows.Forms.TableLayoutPanel tlpRoot;

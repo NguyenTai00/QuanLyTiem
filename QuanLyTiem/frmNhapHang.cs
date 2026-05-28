@@ -67,13 +67,13 @@ namespace QuanLyTiem
             btnHuy.Enabled = (dtItems.Rows.Count > 0);
         }
 
-        void TinhTongTienPhieu()
+        /*void TinhTongTienPhieu()
         {
             double total = 0;
             foreach (DataRow row in dtItems.Rows)
                 total += Convert.ToDouble(row["ThanhTien"]);
             txtTongTien.Text = total.ToString("N0") + "đ";
-        }
+        }*/
 
         // Hàm điều khiển: b = true là đang nhập, b = false là trạng thái chờ
         void DieuKhienNhapLieu(bool b)

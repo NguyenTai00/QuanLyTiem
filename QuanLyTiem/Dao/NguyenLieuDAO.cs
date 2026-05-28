@@ -24,6 +24,18 @@ namespace QuanLyTiem.Dao
         {
             return DataProvider.Instance.ExecuteQuery("SELECT * FROM NguyenLieu");
         }
-    }
 
+        public DataTable LayDanhSachLoaiNL()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT DISTINCT LoaiNL FROM NguyenLieu");
+        }
+
+
+        public DataTable LayBaoCaoTonKho(bool isAsc, string loai)
+        {
+            string query = "exec USP_GetIngredientInventoryReport @isAscending , @loai";
+
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { isAsc, loai });
+        }
+    }
 }

@@ -55,8 +55,6 @@
             this.grb3 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietNhap = new System.Windows.Forms.DataGridView();
             this.tlpRightMid = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnKetThuc = new System.Windows.Forms.Button();
@@ -73,7 +71,6 @@
             this.tlpRight.SuspendLayout();
             this.grb3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhap)).BeginInit();
-            this.tlpRightMid.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -381,8 +378,6 @@
             this.tlpRightMid.ColumnCount = 2;
             this.tlpRightMid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.16327F));
             this.tlpRightMid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.83673F));
-            this.tlpRightMid.Controls.Add(this.label8, 0, 0);
-            this.tlpRightMid.Controls.Add(this.txtTongTien, 1, 0);
             this.tlpRightMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpRightMid.Location = new System.Drawing.Point(3, 350);
             this.tlpRightMid.Name = "tlpRightMid";
@@ -391,23 +386,6 @@
             this.tlpRightMid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpRightMid.Size = new System.Drawing.Size(588, 68);
             this.tlpRightMid.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tổng tiền:";
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTongTien.Location = new System.Drawing.Point(198, 3);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(387, 30);
-            this.txtTongTien.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -487,8 +465,6 @@
             this.tlpRight.ResumeLayout(false);
             this.grb3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietNhap)).EndInit();
-            this.tlpRightMid.ResumeLayout(false);
-            this.tlpRightMid.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -522,8 +498,6 @@
         private System.Windows.Forms.GroupBox grb3;
         private System.Windows.Forms.DataGridView dgvChiTietNhap;
         private System.Windows.Forms.TableLayoutPanel tlpRightMid;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnGhi;
         private System.Windows.Forms.Button btnHuy;
