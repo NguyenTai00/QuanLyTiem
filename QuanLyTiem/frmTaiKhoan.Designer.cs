@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpRoot = new System.Windows.Forms.TableLayoutPanel();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -39,16 +40,16 @@
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.nmAccountType = new System.Windows.Forms.NumericUpDown();
             this.txtDisplayName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboNhanVien = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.tlpRoot.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.tlpContent.SuspendLayout();
@@ -128,8 +129,17 @@
             // 
             this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvAccount.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvAccount.EnableHeadersVisualStyles = false;
             this.dtgvAccount.Location = new System.Drawing.Point(3, 3);
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.RowHeadersWidth = 51;
@@ -212,6 +222,14 @@
             this.pnlContent.Size = new System.Drawing.Size(444, 439);
             this.pnlContent.TabIndex = 1;
             // 
+            // cboNhanVien
+            // 
+            this.cboNhanVien.FormattingEnabled = true;
+            this.cboNhanVien.Location = new System.Drawing.Point(149, 223);
+            this.cboNhanVien.Name = "cboNhanVien";
+            this.cboNhanVien.Size = new System.Drawing.Size(172, 33);
+            this.cboNhanVien.TabIndex = 9;
+            // 
             // btnRefresh
             // 
             this.btnRefresh.ForeColor = System.Drawing.Color.Brown;
@@ -256,6 +274,15 @@
             this.txtDisplayName.Size = new System.Drawing.Size(172, 30);
             this.txtDisplayName.TabIndex = 2;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 231);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Nhân viên:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -282,23 +309,6 @@
             this.label1.Size = new System.Drawing.Size(137, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên tài khoản:";
-            // 
-            // cboNhanVien
-            // 
-            this.cboNhanVien.FormattingEnabled = true;
-            this.cboNhanVien.Location = new System.Drawing.Point(149, 223);
-            this.cboNhanVien.Name = "cboNhanVien";
-            this.cboNhanVien.Size = new System.Drawing.Size(172, 33);
-            this.cboNhanVien.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 231);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Nhân viên:";
             // 
             // frmTaiKhoan
             // 

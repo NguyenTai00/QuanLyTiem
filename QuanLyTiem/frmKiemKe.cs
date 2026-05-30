@@ -47,6 +47,15 @@ namespace QuanLyTiem
                 dgvReport.DataSource = BillDAO.Instance.GetReportByFood(date);
             }
 
+            if (dgvReport.Columns.Contains("Giảm giá món"))
+            {
+                // Giúp hiện đầy đủ chuỗi "Pizza bò (10%), Coca (5%)" không bị che mất
+                dgvReport.Columns["Giảm giá món"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                // Đổi màu chữ xanh cho nổi bật
+                dgvReport.Columns["Giảm giá món"].DefaultCellStyle.ForeColor = Color.DarkGreen;
+            }
+
             // 2. Lấy dữ liệu tổng hợp hiện lên các ô bên trái
             DataTable summary = BillDAO.Instance.GetDailySummary(date);
             if (summary.Rows.Count > 0)

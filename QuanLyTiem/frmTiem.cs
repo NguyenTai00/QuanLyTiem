@@ -338,5 +338,10 @@ namespace QuanLyTiem
                 nmFoodDiscount.Value = currentDiscount;
             }
         }
+
+        private void nmFoodCount_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

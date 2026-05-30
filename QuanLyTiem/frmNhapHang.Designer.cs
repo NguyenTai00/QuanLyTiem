@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpRoot = new System.Windows.Forms.TableLayoutPanel();
             this.pnlTitile = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -262,11 +263,12 @@
             // btnGhi
             // 
             this.btnGhi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGhi.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnGhi.Location = new System.Drawing.Point(194, 162);
             this.btnGhi.Name = "btnGhi";
             this.btnGhi.Size = new System.Drawing.Size(185, 49);
             this.btnGhi.TabIndex = 0;
-            this.btnGhi.Text = "Ghi";
+            this.btnGhi.Text = "💾 Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
             this.btnGhi.Click += new System.EventHandler(this.btnGhiPhieu_Click);
             // 
@@ -325,6 +327,7 @@
             // btnThem
             // 
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
             this.btnThem.Location = new System.Drawing.Point(3, 162);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(185, 49);
@@ -364,8 +367,18 @@
             // dgvChiTietNhap
             // 
             this.dgvChiTietNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiTietNhap.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvChiTietNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietNhap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChiTietNhap.EnableHeadersVisualStyles = false;
             this.dgvChiTietNhap.Location = new System.Drawing.Point(3, 26);
             this.dgvChiTietNhap.Name = "dgvChiTietNhap";
             this.dgvChiTietNhap.RowHeadersWidth = 51;
@@ -407,33 +420,36 @@
             // btnHuy
             // 
             this.btnHuy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHuy.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnHuy.Location = new System.Drawing.Point(197, 3);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(188, 64);
             this.btnHuy.TabIndex = 1;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "🚫 Hủy ";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnKetThuc
             // 
             this.btnKetThuc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKetThuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btnKetThuc.Location = new System.Drawing.Point(391, 3);
             this.btnKetThuc.Name = "btnKetThuc";
             this.btnKetThuc.Size = new System.Drawing.Size(194, 64);
             this.btnKetThuc.TabIndex = 2;
-            this.btnKetThuc.Text = "Kết thúc";
+            this.btnKetThuc.Text = "⏻ kết thúc";
             this.btnKetThuc.UseVisualStyleBackColor = true;
             this.btnKetThuc.Click += new System.EventHandler(this.btnKetThuc_Click);
             // 
             // btnSua
             // 
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
             this.btnSua.Location = new System.Drawing.Point(3, 3);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(188, 64);
             this.btnSua.TabIndex = 3;
-            this.btnSua.Text = "Sửa";
+            this.btnSua.Text = "📝 Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
