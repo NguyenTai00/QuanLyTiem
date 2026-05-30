@@ -119,8 +119,7 @@ namespace QuanLyTiem
 
         private void quảnLýDanhMụcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDanhMuc f = new frmDanhMuc();
-            OpenChildForm(f, ChildFormMode.Fill);
+            
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,8 +129,7 @@ namespace QuanLyTiem
 
         private void quảnLýBànĂnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmBanAn f = new frmBanAn();
-            OpenChildForm(f, ChildFormMode.Fill);
+           
         }
 
         private void doanhThuToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -181,6 +179,32 @@ namespace QuanLyTiem
         private void báoCáoTồnKhoNguyênLiệuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmBaoCaoTonKho f = new frmBaoCaoTonKho();
+            OpenChildForm(f, ChildFormMode.Fill);
+        }
+
+        private void quảnLýBànĂnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmBanAn f = new frmBanAn();
+            OpenChildForm(f, ChildFormMode.Fill);
+        }
+
+        private void quảnLýDanhMụcToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmDanhMuc f = new frmDanhMuc();
+            OpenChildForm(f, ChildFormMode.Fill);
+        }
+
+        private void quảnLýThứcĂnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmThucAn f = new frmThucAn();
+            f.InsertFood += f_InsertFood;
+            f.UpdateFood += f_UpdateFood;
+            OpenChildForm(f, ChildFormMode.Fill);
+        }
+
+        private void báoCáoNhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoNhapHang f = new frmBaoCaoNhapHang(loginAccount);
             OpenChildForm(f, ChildFormMode.Fill);
         }
     }

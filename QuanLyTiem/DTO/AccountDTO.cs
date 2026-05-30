@@ -19,7 +19,7 @@ namespace QuanLyTiem.DTO
             this.DisplayName = row["DisplayName"].ToString();
             this.Type = (int)row["Type"];
             // Lấy mã nhân viên thực tế từ Database
-            this.IDNhanVien = (int)row["IDNhanVien"];
+            this.IDNhanVien = row["IDNhanVien"] == DBNull.Value ? 0 : (int)row["IDNhanVien"];
         }
     }
 }

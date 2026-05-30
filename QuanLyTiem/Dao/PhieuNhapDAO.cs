@@ -55,5 +55,14 @@ namespace QuanLyTiem.Dao
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
+        public DataTable GetImportReportList(DateTime from, DateTime to, int idNCC)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetImportReportList @fromDate , @toDate , @idNCC", new object[] { from, to, idNCC });
+        }
+
+        public DataTable GetImportSummary(DateTime from, DateTime to, int idNCC)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetImportSummary @fromDate , @toDate , @idNCC", new object[] { from, to, idNCC });
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPrintExcel = new System.Windows.Forms.Button();
             this.tlp0Button = new System.Windows.Forms.TableLayoutPanel();
             this.btnView = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -41,19 +41,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.cboStaff = new System.Windows.Forms.ComboBox();
+            this.cboSupplier = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTotalBills = new System.Windows.Forms.TextBox();
-            this.txtTotalRevenue = new System.Windows.Forms.TextBox();
-            this.txtDistinctFood = new System.Windows.Forms.TextBox();
-            this.txtBestSeller = new System.Windows.Forms.TextBox();
+            this.txtTotalReceipts = new System.Windows.Forms.TextBox();
+            this.txtTotalAmount = new System.Windows.Forms.TextBox();
+            this.txtIngredientCount = new System.Windows.Forms.TextBox();
+            this.txtMostImported = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tblContent = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvSales = new System.Windows.Forms.DataGridView();
+            this.dgvImportReport = new System.Windows.Forms.DataGridView();
             this.tlpRoot = new System.Windows.Forms.TableLayoutPanel();
             this.pnlH = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,23 +65,24 @@
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tblContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImportReport)).BeginInit();
             this.tlpRoot.SuspendLayout();
             this.pnlH.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnPrint
+            // btnPrintExcel
             // 
-            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
-            this.btnPrint.Location = new System.Drawing.Point(136, 5);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(124, 105);
-            this.btnPrint.TabIndex = 1;
-            this.btnPrint.Text = "🖨 In";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrintExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrintExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(163)))), ((int)(((byte)(74)))));
+            this.btnPrintExcel.Location = new System.Drawing.Point(136, 5);
+            this.btnPrintExcel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPrintExcel.Name = "btnPrintExcel";
+            this.btnPrintExcel.Size = new System.Drawing.Size(124, 105);
+            this.btnPrintExcel.TabIndex = 1;
+            this.btnPrintExcel.Text = "🖨 In";
+            this.btnPrintExcel.UseVisualStyleBackColor = true;
+            this.btnPrintExcel.Click += new System.EventHandler(this.btnPrintExcel_Click);
             // 
             // tlp0Button
             // 
@@ -90,7 +91,7 @@
             this.tlp0Button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tlp0Button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tlp0Button.Controls.Add(this.btnView, 0, 0);
-            this.tlp0Button.Controls.Add(this.btnPrint, 1, 0);
+            this.tlp0Button.Controls.Add(this.btnPrintExcel, 1, 0);
             this.tlp0Button.Controls.Add(this.btnExit, 2, 0);
             this.tlp0Button.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp0Button.Location = new System.Drawing.Point(4, 509);
@@ -113,6 +114,7 @@
             this.btnView.TabIndex = 0;
             this.btnView.Text = "👁 Xem";
             this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnExit
             // 
@@ -186,7 +188,7 @@
             this.tlpGrb1.Controls.Add(this.label4, 0, 2);
             this.tlpGrb1.Controls.Add(this.dtpFromDate, 1, 0);
             this.tlpGrb1.Controls.Add(this.dtpToDate, 1, 1);
-            this.tlpGrb1.Controls.Add(this.cboStaff, 1, 2);
+            this.tlpGrb1.Controls.Add(this.cboSupplier, 1, 2);
             this.tlpGrb1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpGrb1.Location = new System.Drawing.Point(4, 28);
             this.tlpGrb1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -256,16 +258,16 @@
             this.dtpToDate.Size = new System.Drawing.Size(216, 30);
             this.dtpToDate.TabIndex = 4;
             // 
-            // cboStaff
+            // cboSupplier
             // 
-            this.cboStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStaff.FormattingEnabled = true;
-            this.cboStaff.Location = new System.Drawing.Point(165, 139);
-            this.cboStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cboStaff.Name = "cboStaff";
-            this.cboStaff.Size = new System.Drawing.Size(216, 33);
-            this.cboStaff.TabIndex = 5;
+            this.cboSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSupplier.FormattingEnabled = true;
+            this.cboSupplier.Location = new System.Drawing.Point(165, 139);
+            this.cboSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboSupplier.Name = "cboSupplier";
+            this.cboSupplier.Size = new System.Drawing.Size(216, 33);
+            this.cboSupplier.TabIndex = 5;
             // 
             // groupBox2
             // 
@@ -290,10 +292,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.38323F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtTotalBills, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtTotalRevenue, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtDistinctFood, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtBestSeller, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtTotalReceipts, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtTotalAmount, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIngredientCount, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtMostImported, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -332,45 +334,45 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Tổng tiền nhập hàng:";
             // 
-            // txtTotalBills
+            // txtTotalReceipts
             // 
-            this.txtTotalBills.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTotalBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalBills.Location = new System.Drawing.Point(164, 5);
-            this.txtTotalBills.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTotalBills.Name = "txtTotalBills";
-            this.txtTotalBills.Size = new System.Drawing.Size(217, 30);
-            this.txtTotalBills.TabIndex = 4;
+            this.txtTotalReceipts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTotalReceipts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalReceipts.Location = new System.Drawing.Point(164, 5);
+            this.txtTotalReceipts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTotalReceipts.Name = "txtTotalReceipts";
+            this.txtTotalReceipts.Size = new System.Drawing.Size(217, 30);
+            this.txtTotalReceipts.TabIndex = 4;
             // 
-            // txtTotalRevenue
+            // txtTotalAmount
             // 
-            this.txtTotalRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalRevenue.Location = new System.Drawing.Point(164, 56);
-            this.txtTotalRevenue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTotalRevenue.Name = "txtTotalRevenue";
-            this.txtTotalRevenue.Size = new System.Drawing.Size(217, 30);
-            this.txtTotalRevenue.TabIndex = 5;
+            this.txtTotalAmount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalAmount.Location = new System.Drawing.Point(164, 56);
+            this.txtTotalAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTotalAmount.Name = "txtTotalAmount";
+            this.txtTotalAmount.Size = new System.Drawing.Size(217, 30);
+            this.txtTotalAmount.TabIndex = 5;
             // 
-            // txtDistinctFood
+            // txtIngredientCount
             // 
-            this.txtDistinctFood.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDistinctFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDistinctFood.Location = new System.Drawing.Point(164, 107);
-            this.txtDistinctFood.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDistinctFood.Name = "txtDistinctFood";
-            this.txtDistinctFood.Size = new System.Drawing.Size(217, 30);
-            this.txtDistinctFood.TabIndex = 6;
+            this.txtIngredientCount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtIngredientCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIngredientCount.Location = new System.Drawing.Point(164, 107);
+            this.txtIngredientCount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIngredientCount.Name = "txtIngredientCount";
+            this.txtIngredientCount.Size = new System.Drawing.Size(217, 30);
+            this.txtIngredientCount.TabIndex = 6;
             // 
-            // txtBestSeller
+            // txtMostImported
             // 
-            this.txtBestSeller.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBestSeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBestSeller.Location = new System.Drawing.Point(164, 158);
-            this.txtBestSeller.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBestSeller.Name = "txtBestSeller";
-            this.txtBestSeller.Size = new System.Drawing.Size(217, 30);
-            this.txtBestSeller.TabIndex = 7;
+            this.txtMostImported.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMostImported.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMostImported.Location = new System.Drawing.Point(164, 158);
+            this.txtMostImported.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMostImported.Name = "txtMostImported";
+            this.txtMostImported.Size = new System.Drawing.Size(217, 30);
+            this.txtMostImported.TabIndex = 7;
             // 
             // label7
             // 
@@ -402,7 +404,7 @@
             this.tblContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tblContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tblContent.Controls.Add(this.tlpLeft, 0, 0);
-            this.tblContent.Controls.Add(this.dgvSales, 1, 0);
+            this.tblContent.Controls.Add(this.dgvImportReport, 1, 0);
             this.tblContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblContent.Location = new System.Drawing.Point(4, 130);
             this.tblContent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -412,18 +414,18 @@
             this.tblContent.Size = new System.Drawing.Size(1044, 639);
             this.tblContent.TabIndex = 1;
             // 
-            // dgvSales
+            // dgvImportReport
             // 
-            this.dgvSales.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSales.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSales.Location = new System.Drawing.Point(421, 5);
-            this.dgvSales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvSales.Name = "dgvSales";
-            this.dgvSales.RowHeadersWidth = 51;
-            this.dgvSales.RowTemplate.Height = 24;
-            this.dgvSales.Size = new System.Drawing.Size(619, 629);
-            this.dgvSales.TabIndex = 1;
+            this.dgvImportReport.BackgroundColor = System.Drawing.Color.White;
+            this.dgvImportReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImportReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvImportReport.Location = new System.Drawing.Point(421, 5);
+            this.dgvImportReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvImportReport.Name = "dgvImportReport";
+            this.dgvImportReport.RowHeadersWidth = 51;
+            this.dgvImportReport.RowTemplate.Height = 24;
+            this.dgvImportReport.Size = new System.Drawing.Size(619, 629);
+            this.dgvImportReport.TabIndex = 1;
             // 
             // tlpRoot
             // 
@@ -487,7 +489,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tblContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImportReport)).EndInit();
             this.tlpRoot.ResumeLayout(false);
             this.pnlH.ResumeLayout(false);
             this.pnlH.PerformLayout();
@@ -497,7 +499,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnPrintExcel;
         private System.Windows.Forms.TableLayoutPanel tlp0Button;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnExit;
@@ -510,19 +512,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.DateTimePicker dtpToDate;
-        private System.Windows.Forms.ComboBox cboStaff;
+        private System.Windows.Forms.ComboBox cboSupplier;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTotalBills;
-        private System.Windows.Forms.TextBox txtTotalRevenue;
-        private System.Windows.Forms.TextBox txtDistinctFood;
-        private System.Windows.Forms.TextBox txtBestSeller;
+        private System.Windows.Forms.TextBox txtTotalReceipts;
+        private System.Windows.Forms.TextBox txtTotalAmount;
+        private System.Windows.Forms.TextBox txtIngredientCount;
+        private System.Windows.Forms.TextBox txtMostImported;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tblContent;
-        private System.Windows.Forms.DataGridView dgvSales;
+        private System.Windows.Forms.DataGridView dgvImportReport;
         private System.Windows.Forms.TableLayoutPanel tlpRoot;
         private System.Windows.Forms.Panel pnlH;
         private System.Windows.Forms.Label label1;

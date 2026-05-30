@@ -31,22 +31,22 @@ namespace QuanLyTiem.Dao
 
         public System.Data.DataTable GetListAccount()
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT UserName, DisplayName, Type FROM Account");
+            return DataProvider.Instance.ExecuteQuery("SELECT UserName, DisplayName, Type, IDNhanVien FROM Account");
         }
 
         // Thêm tài khoản mới (Mặc định mật khẩu là '0')
-        public bool InsertAccount(string name, string displayName, int type)
+        public bool InsertAccount(string name, string display, int type, int idNV)
         {
-            string query = string.Format("INSERT INTO Account (UserName, DisplayName, Type, PassWord) VALUES (N'{0}', N'{1}', {2}, N'0')", name, displayName, type);
+            string query = string.Format("INSERT dbo.Account (UserName, DisplayName, Type, PassWord, IDNhanVien) VALUES ( N'{0}', N'{1}', {2}, N'0', {3})", name, display, type, idNV);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 
 
         // Sửa tài khoản
-        public bool UpdateAccount(string name, string displayName, int type)
+        public bool UpdateAccount(string name, string display, int type, int idNV)
         {
-            string query = string.Format("UPDATE Account SET DisplayName = N'{1}', Type = {2} WHERE UserName = N'{0}'", name, displayName, type);
+            string query = string.Format("UPDATE dbo.Account SET DisplayName = N'{1}', Type = {2}, IDNhanVien = {3} WHERE UserName = N'{0}'", name, display, type, idNV);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
